@@ -157,5 +157,5 @@ int whichData(const string &str)
 
 void setData(Shape& shape, const string &data, const int &data_num)
 {
-	// conversion and store
+	// conversion and storeee
 }
