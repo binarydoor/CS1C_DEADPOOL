@@ -1,0 +1,11 @@
+Vector
+2 options
+- 1) dynamic array
+- 2) node base
+
+Need functions that are described in assignment docs
+
+
+Parser
+Need base and derived classes (abstract?)
+Need parsing algorithms
