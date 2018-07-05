@@ -7,6 +7,7 @@
 **********************************************************/
 
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ using namespace std;
 // Made the temporary namespace here so we can test the calling/assigning
 namespace Qt
 {
-	enum GlobalColor {white, black, red, green, blue, cyna, magenta, yellow, gray};
+	enum GlobalColor {white, black, red, green, blue, cyan, magenta, yellow, gray};
 
 	enum PenStyle {NoPen, SolidLine, DashLine, DotLine, DashDotLine, DashDotDotLine};
 
@@ -41,7 +42,7 @@ struct Shape
 {
 	int shapeId;
 	string shapeType; // this should be an object type but leave it as string for now
-	int shapeDimensions[]; // this should be an object type but leave it as int array for now
+	vector<int> shapeDimensions; // this should be an object type but leave it as int vector for now
 	Qt:GlobalColor penColor;
 	int penWidth;
 	Qt::PenStyle penStyle;	// careful of lower case first letter
@@ -57,6 +58,7 @@ struct Shape
 	Qt::Style textFontStyle;
 	Qt::Weight textFontWeight;
 }
+
 
 void importShape(Shape*, const string &);
 int whichData(const string &);
@@ -157,5 +159,106 @@ int whichData(const string &str)
 
 void setData(Shape& shape, const string &data, const int &data_num)
 {
-	// conversion and storeee
+	switch (data_num)
+	{
+	case 1:
+		shape.shapeID = stoi(data);
+		break;
+	case 2:
+		shape.shapeType = data;
+		break;
+	case 3:
+		size_t pos = 0;
+		string delimeter = ", ";
+		string tempData = data;
+		while ((pos = tempData.find(delimeter)) != string::npos)
+		{
+			shapeDimensions.push_back(stoi(tempData.substr(0, pos)));
+			tempData.erase(0, pos + delimeter.length());
+
+		}
+		shapeDimensions.push_back(stoi(tempData));
+		break;
+	case 4:
+		if (data == "white")
+			penColor = white;
+		else if (data == "black")
+			penColor = black;
+		else if (data == "red")
+			penColor = red;
+		else if (data == "green")
+			penColor = green;
+		else if (data == "blue")
+			penColor = blue;
+		else if (data == "cyan")
+			penColor = cyan;
+		else if (data == "magenta")
+			penColor = magenta;
+		else if (data == "yellow")
+			penColor = yellow;
+		else if (data == "gray")
+			penColor = gray;
+		break;
+	case 5:
+		penWidth = stoi(data);
+		break;
+	case 6:
+		if (data == "NoPen")
+			penStyle = NoPen;
+		else if (data == "SolidLine")
+			penStyle = SolidLine;
+		else if (data == "DashLine")
+			penStyle = DashLine;
+		else if (data == "DotLine")
+			penStyle = DotLine;
+		else if (data == "DashDotLine")
+			penStyle = DashDotLine;
+		else if (data == "DashDotDotLine")
+			penStyle = DashDotDotLine;
+		break;
+	case 7:
+		if (data == "FlatCap")
+			penCapStyle = FlatCap;
+		else if (data == "SquareCap")
+			penCapStyle = SquareCap;
+		else if (data == "RoundCap")
+			penCapStyle = RoundCap;
+		break;
+	case 8:
+		if (data == "MiterJoin")
+			penJoinStyle = MiterJoin;
+		else if (data == "BevelJoin")
+			penJoinStyle = BevelJoin;
+		else if (data == "RoundJoin")
+			penJoinStyle = RoundJoin;
+		break;
+	case 9:
+		// to be finished
+	}
+}
+
+
+
+
+
+
+struct Shape
+{
+	int shapeId;
+	string shapeType; // this should be an object type but leave it as string for now
+	vector<int> shapeDimensions; // this should be an object type but leave it as int vector for now
+	Qt:GlobalColor penColor;
+	int penWidth;
+	Qt::PenStyle penStyle;	// careful of lower case first letter
+	Qt::PenCapStyle penCapStyle;
+	Qt::PenJoinStyle penJoinStyle;
+	Qt::GlobalColor brushColor;
+	Qt::BrushStyle brushStyle;
+	string textString;
+	Qt::GlobalColor textColor;
+	Qt::AlignmentFlag textAlignment;
+	int textPointSize;
+	string textFontFamily;
+	Qt::Style textFontStyle;
+	Qt::Weight textFontWeight;
 }
