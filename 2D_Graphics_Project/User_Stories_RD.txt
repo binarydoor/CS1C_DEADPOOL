@@ -1,0 +1,127 @@
+﻿As a user I want to be able to draw any shape and move it anywhere. 
+1. Description:
+A user can draw any shape by providing the correct dimensions and providing a specific format of display.
+A user can also move the shape as they wish to any location. 
+A user will be allowed to calculate the perimeter along with the area of any shape. 
+1. Tasks:
+        Implement an Abstract Base Class with derived classes to create user friendly client code. 
+        The client should be able to use the idea of polymorphism to create easy readable code that will be compatible for any derived class. 
+1. Tests:
+        Verify that the classes are displaying the correct shapes with the correct properties in the gui.
+        Verify that the constructors are storing the values correctly. 
+        Verify that the client will be able to move any shape anywhere.
+        Verify that the perimeter and area are being calculated and returned correctly. 
+1. Assignee: 
+        Sam, implement the abstract base class with the derived classes, assure every shape has its proper data members. 
+        All team members understand how the class Qpainter works in order to accomplish drawing shapes. 
+1. Estimation:
+        4
+1. Priority:
+        7
+1. Done:
+        User is able to draw any shape with certain specific properties. 
+        User is able to move any shape anywhere on the gui
+        User is able to calculate the perimeter along with the area of the shape.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As a user I would like to see any shape in a rendering window so that I can display other shapes on that window. 
+1. Description:
+I can view any shape in a rendering area with specific dimensions. 
+I view all graphic objects involving text in rendering window. 
+I can view the shape Id above each shape identifying it. 
+1. Tasks:
+        The rendering area must have a minimum of 1000 pixels horizontally and 500 pixels vertically. 
+Displaying each shape appropriately on a given area of 1000 by 500 pixels. 
+Create an easy to see display for the user.          
+1. Tests:
+        Verify that the shapes fit appropriately on the window.  
+        Verify that all shapes are being displayed on the window correctly.
+1. Assignee: 
+        Every member will be expected to know how the gui interface works and displays the appropriate content.
+        Sam and Eunsoo will work on creating a 1000 by 500 pixel rendering window to display the shapes read from the file. 
+1. Estimation:
+        5
+1. Priority: 
+        8
+1. Done:
+        User will be able to see all of his or her shapes in a rendering window. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As a developer I want to learn the mechanics of github and understand how to use it efficiently to produce synergy. 
+1. Description:
+2. Tasks:
+3. Tests:
+4. Assignee:
+5. Estimation:
+6. Priority:
+7. Done:
