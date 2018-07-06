@@ -103,25 +103,24 @@ Create an easy to see display for the user.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 As a developer I want to learn the mechanics of github and understand how to use it efficiently to produce synergy. 
 1. Description:
-2. Tasks:
-3. Tests:
-4. Assignee:
-5. Estimation:
-6. Priority:
-7. Done:
+        Every member will be allowed to work on group files whenever it is convenient for them. 
+        Members will be allowed to see what was modified or added to the group folders/files and work off of the unfinished project.
+        Members will be allowed to cooperate in providing changes that make code more efficiently.
+        Synergy will be produced by allowing members to contribute equally in our group project.
+1. Tasks:
+        I will be able to modify another person’s work and will be able to cooperate well with members of the group. 
+        I will be able to update and work independently at home while contributing to other’s work. 
+        Team members will learn most important commands to work in the terminal in order to use git/github. 
+1. Tests: 
+        Verify that each team member understands git and github to work together in unison. 
+        Verify that each team member is contributing equally in the work load. 
+1. Assignee:
+All team members are expected to use github and understand its mechanics in working in the terminal 
+1. Estimation: 
+        10
+1. Priority:
+        6
+1. Done: 
+        As developers we will be able to cooperate in each others work as well as give feedback. This easy understandable tool will allow us to finish each sprint with a good amount of effort put in our project.
