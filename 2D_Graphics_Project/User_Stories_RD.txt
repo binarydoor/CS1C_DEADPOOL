@@ -1,4 +1,4 @@
-﻿As a user I want to be able to draw any shape and move it anywhere. 
+#1 As a user I want to be able to draw any shape and move it anywhere. 
 1. Description:
 A user can draw any shape by providing the correct dimensions and providing a specific format of display.
 A user can also move the shape as they wish to any location. 
@@ -23,32 +23,7 @@ A user will be allowed to calculate the perimeter along with the area of any sha
         User is able to move any shape anywhere on the gui
         User is able to calculate the perimeter along with the area of the shape.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-As a user I would like to see any shape in a rendering window so that I can display other shapes on that window. 
+#2 As a user I would like to see any shape in a rendering window so that I can display other shapes on that window. 
 1. Description:
 I can view any shape in a rendering area with specific dimensions. 
 I view all graphic objects involving text in rendering window. 
@@ -70,40 +45,7 @@ Create an easy to see display for the user.
 1. Done:
         User will be able to see all of his or her shapes in a rendering window. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-As a developer I want to learn the mechanics of github and understand how to use it efficiently to produce synergy. 
+#3 As a developer I want to learn the mechanics of github and understand how to use it efficiently to produce synergy. 
 1. Description:
         Every member will be allowed to work on group files whenever it is convenient for them. 
         Members will be allowed to see what was modified or added to the group folders/files and work off of the unfinished project.
@@ -124,3 +66,77 @@ All team members are expected to use github and understand its mechanics in work
         6
 1. Done: 
         As developers we will be able to cooperate in each others work as well as give feedback. This easy understandable tool will allow us to finish each sprint with a good amount of effort put in our project.
+             
+#4 As a member in group project, I want the sourcecodes to be well-documented.
+a) Description:
+        Other developer can easily search for parts of instructions they need in the sourcecode.
+        Other project members can easily define the implementation of the classes and functions. 
+        By making the sourcecode more readable, it makes the group operations more efficient.
+b) Tasks:
+        Set a standardize format when it comes to aligning syntax and comments.
+        Always aware of readibility during the coding.
+        Get to know the Doxygen for documentations. 
+c) Tests:
+        Check if the sourcecode follows the standardize format.
+        Check if all classes and its members are documented. 
+        Verify with other group members to see if there is any algorithms that look confusing. 
+d) Assignee: 
+        All team members need to discuss and work on creating formatting and documentations.
+e) Estimation:
+        6
+f) Priority:
+        9
+g) Done:
+        All members are able to easily read other member's sourcodes.
+        All members spend less time on documentations by using documenting tools.
+        Merging groups work takes lesser time.
+
+#5 As a client, I want the product to be enhanced for its performance over time.
+a) Description:
+        The program needs to be optimized over time for its performance.
+        How much time reduction will it be considered optimized. 
+        Optimization on performance should focus on both time and memory usage.
+b) Tasks:
+        Once working version is completed, review the previous codes, instructions,
+        and algorithms to see if any optimization can be done.
+        When altering algorithm, it needs to maintain it's interface (especially output).
+c) Tests:
+        Compare the performance between original and enhanced versions.
+        Check for both amount of clocks and memory reserves during the run. 
+        Run multiple test runs to make sure nothing is broken. 
+d) Assignee: 
+        Each member does the optimization on their code/part.
+e) Estimation:
+        10
+f) Priority:
+        8
+g) Done:
+        Program provides same interface as original but with better speed.
+        Use less memory so that there are more rooms for simultaneous runs.
+        Must have working version ready to start on optimization.
+
+#6 As a client, I want the product to work on all OS without compatibility issues.
+a) Description:
+        Qt is built to work on all OS but still has compatibility issues.
+        Study what causes compatibility issues within OS. 
+        Find out what will be best solution to make the program/project work on all OS.
+b) Tasks:
+        Research and study the differences of using Qt/Qt Creator in different OS.
+        Define the problem that it may causes from those differences.
+        Come up with temporary solutions and discuss with other group member.
+c) Tests:
+        Check if the program works on all Unix base system (macOS, Linux).
+        Check if the program works on all version of Widnows (7, 8.1, 10).
+        Check if the program is ran in different locale settings (language).
+d) Assignee: 
+        Each member should work on it.
+e) Estimation:
+        4
+f) Priority:
+        10
+g) Done:
+        Program is running fine on many (if not all) OS.
+        Developers (members) have better understanding on operating system for future projects.
+        Increases user range.
+
+#7 
