@@ -139,4 +139,33 @@ g) Done:
         Developers (members) have better understanding on operating system for future projects.
         Increases user range.
 
-#7 
+#7 As a user, I can look up the contact information of the development team.
+a) Description:
+        The program starts with a screen with a team name and logo.
+        The user is given an input option to look up the contact information.
+        The user can get out of the page.
+b) Tasks:
+        As a user, I can see the team contact information clearly at start up.
+        As a user, I am provided with an input option to look at contact information.
+        As a user, I can return to the previous page with ease.
+c) Tests:
+        Verify that the information shows up on the start page.
+        Verify that the information shows up with the right input.
+        Verify that the previous page shows up when exit.
+d) Assignee:
+        Eunsoo, implement front end UI and code behind logic, member class data & operations.
+        John, implement parsing logic to accept the input.
+        Samuel, design the info page.
+e) Estimation:
+        4
+f) Priority:
+        10
+g) Done: 
+        Program always starts with the team name and logo.
+        Input option is shown on the page.
+        User can go into and out of the info page with clear directions.
+        
+#8 As a user, 
+        
+
+Baseline story point estimate value of one = 2 hrs of development time for a single developer
