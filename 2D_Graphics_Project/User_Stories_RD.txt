@@ -165,7 +165,9 @@ g) Done:
         Input option is shown on the page.
         User can go into and out of the info page with clear directions.
         
-#8 As a user, 
+#8 As a user, I can enter a text file.
+a) Description:
+        
         
 
 Baseline story point estimate value of one = 2 hrs of development time for a single developer
