@@ -1,70 +1,66 @@
 #1 As a user I want to be able to draw any shape and move it anywhere. 
-1. Description:
-A user can draw any shape by providing the correct dimensions and providing a specific format of display.
-A user can also move the shape as they wish to any location. 
-A user will be allowed to calculate the perimeter along with the area of any shape. 
-1. Tasks:
+a) Description:
+        A user can draw any shape by providing the correct dimensions and providing a specific format of display.
+        A user can also move the shape as they wish to any location. 
+        A user will be allowed to calculate the perimeter along with the area of any shape. 
+b) Tasks:
         Implement an Abstract Base Class with derived classes to create user friendly client code. 
         The client should be able to use the idea of polymorphism to create easy readable code that will be compatible for any derived class. 
-1. Tests:
+c) Tests:
         Verify that the classes are displaying the correct shapes with the correct properties in the gui.
         Verify that the constructors are storing the values correctly. 
         Verify that the client will be able to move any shape anywhere.
         Verify that the perimeter and area are being calculated and returned correctly. 
-1. Assignee: 
+d) Assignee: 
         Sam, implement the abstract base class with the derived classes, assure every shape has its proper data members. 
         All team members understand how the class Qpainter works in order to accomplish drawing shapes. 
-1. Estimation:
-        4
-1. Priority:
-        7
-1. Done:
+d) Estimation: 4
+e) Priority: 7
+f) Done:
         User is able to draw any shape with certain specific properties. 
         User is able to move any shape anywhere on the gui
         User is able to calculate the perimeter along with the area of the shape.
 
 #2 As a user I would like to see any shape in a rendering window so that I can display other shapes on that window. 
-1. Description:
-I can view any shape in a rendering area with specific dimensions. 
-I view all graphic objects involving text in rendering window. 
-I can view the shape Id above each shape identifying it. 
-1. Tasks:
+a) Description:
+        I can view any shape in a rendering area with specific dimensions. 
+        I view all graphic objects involving text in rendering window. 
+        I can view the shape Id above each shape identifying it. 
+b) Tasks:
         The rendering area must have a minimum of 1000 pixels horizontally and 500 pixels vertically. 
-Displaying each shape appropriately on a given area of 1000 by 500 pixels. 
-Create an easy to see display for the user.          
-1. Tests:
+        Displaying each shape appropriately on a given area of 1000 by 500 pixels. 
+        Create an easy to see display for the user.          
+c) Tests:
         Verify that the shapes fit appropriately on the window.  
         Verify that all shapes are being displayed on the window correctly.
-1. Assignee: 
+d) Assignee: 
         Every member will be expected to know how the gui interface works and displays the appropriate content.
         Sam and Eunsoo will work on creating a 1000 by 500 pixel rendering window to display the shapes read from the file. 
-1. Estimation:
+d) Estimation:
         5
-1. Priority: 
+f) Priority: 
         8
-1. Done:
+g) Done:
         User will be able to see all of his or her shapes in a rendering window. 
 
 #3 As a developer I want to learn the mechanics of github and understand how to use it efficiently to produce synergy. 
-1. Description:
+a) Description:
         Every member will be allowed to work on group files whenever it is convenient for them. 
         Members will be allowed to see what was modified or added to the group folders/files and work off of the unfinished project.
         Members will be allowed to cooperate in providing changes that make code more efficiently.
         Synergy will be produced by allowing members to contribute equally in our group project.
-1. Tasks:
+b) Tasks:
         I will be able to modify another person’s work and will be able to cooperate well with members of the group. 
         I will be able to update and work independently at home while contributing to other’s work. 
         Team members will learn most important commands to work in the terminal in order to use git/github. 
-1. Tests: 
+c) Tests: 
         Verify that each team member understands git and github to work together in unison. 
         Verify that each team member is contributing equally in the work load. 
-1. Assignee:
-All team members are expected to use github and understand its mechanics in working in the terminal 
-1. Estimation: 
-        10
-1. Priority:
-        6
-1. Done: 
+d) Assignee:
+        All team members are expected to use github and understand its mechanics in working in the terminal 
+d) Estimation: 10
+f) Priority: 6
+g) Done: 
         As developers we will be able to cooperate in each others work as well as give feedback. This easy understandable tool will allow us to finish each sprint with a good amount of effort put in our project.
              
 #4 As a member in group project, I want the sourcecodes to be well-documented.
@@ -82,10 +78,8 @@ c) Tests:
         Verify with other group members to see if there is any algorithms that look confusing. 
 d) Assignee: 
         All team members need to discuss and work on creating formatting and documentations.
-e) Estimation:
-        6
-f) Priority:
-        9
+e) Estimation: 6
+f) Priority: 9
 g) Done:
         All members are able to easily read other member's sourcodes.
         All members spend less time on documentations by using documenting tools.
@@ -106,10 +100,8 @@ c) Tests:
         Run multiple test runs to make sure nothing is broken. 
 d) Assignee: 
         Each member does the optimization on their code/part.
-e) Estimation:
-        10
-f) Priority:
-        8
+e) Estimation: 10
+f) Priority: 8
 g) Done:
         Program provides same interface as original but with better speed.
         Use less memory so that there are more rooms for simultaneous runs.
@@ -130,10 +122,8 @@ c) Tests:
         Check if the program is ran in different locale settings (language).
 d) Assignee: 
         Each member should work on it.
-e) Estimation:
-        4
-f) Priority:
-        10
+e) Estimation: 4
+f) Priority: 10
 g) Done:
         Program is running fine on many (if not all) OS.
         Developers (members) have better understanding on operating system for future projects.
@@ -156,18 +146,83 @@ d) Assignee:
         Eunsoo, implement front end UI and code behind logic, member class data & operations.
         John, implement parsing logic to accept the input.
         Samuel, design the info page.
-e) Estimation:
-        4
-f) Priority:
-        10
+e) Estimation: 4
+f) Priority: 10
 g) Done: 
         Program always starts with the team name and logo.
         Input option is shown on the page.
         User can go into and out of the info page with clear directions.
         
-#8 As a user, I can enter a text file.
+#8 As a user, I can input a text file.
+a) Description: 
+        A user can provide a text file of shape specifications as an input.
+        The program reads the text file and instantiates shape objects accordingly.
+        The program alerts the user if the input is in a wrong format.
+b) Tasks:
+        As a user, I can input a text file of a specific name, e.g. shape.txt.
+        As a user, I can instantiate multiple shape objects with different parameters with a single text file.
+c) Tests:
+        Verify that the program reads in the text file of the right name.
+        Verify that the program reads in the specifications correctly.
+        Verify that the program instantiates the shape objects accordingly.
+        Verify that the program alerts the user when error occurs.
+d) Assignee:
+        John, implement parsing object and logic.
+        Samuel, test the parsing mechanism with the shape class implementation.
+        Eunsoo, implement the error alerting system.
+e) Estimation: 4
+f) Priority: 2
+g) Done:
+        The program finds and reads in from the right text file.
+        The program generates shape objects with the specifications provided from the text file.
+        The program outputs an error message when there is a read error.
+        
+#9 As a customer, I can integrate the graphics rendering library into my own software.
 a) Description:
+        A customer can locate the graphics rendering library.
+        A customer can use the library with the help of documentation.
+        A customer can utilze the library for general use.
+b) Tasks:
+        As a customer, I can include the library into my code.
+        As a customer, I can call the member functions without collisions.
+        As a customer, I can utilize the library elsewhere than the purchased product.
+c) Tests:
+        Verify that the documentation directs the locations of all necessary source codes of the library.
+        Verify that the functions are well-documented.
+        Verify that the library is well-contained.
+d) Asssignee:
+        Eunsoo, provide documentations for vector library.
+        Samuel, provide documentations for shape class.
+        John, provide documentations for parsing object.
+e) Estimate: 6
+f) Priority: 3
+g) Done:
+        User is able to read the documentation without confusion and utilize the library.
+        Files are located properly and aptly, organized in an expected manner.
         
+#10 As a user, I can compare and sort the shape objects.
+a) Description:
+        A user can identify the shapes by their IDs.
+        A user can compare two shape objects by their IDs.
+        A user can sort the shape objects with help of their IDs.
+b) Tasks:
+        As a user, I can put IDs on shape objects.
+        As a user, I can assign IDs so that it makes a hierarchy of shapes, facilitating comparision and sorting.
+        As a user, I can store objects in vectors, enabling easy organization and sorting mechanism.
+c) Tests:
+        Verify that each shape objects are assigned an ID. 
+        Verify that objects of same types have same ID.
+        Verify that objects can be compared by their IDs.
+        Verify that objects can be stored in a vector, and manipulated by their IDs.
+        Verify that the sorting mechanism works.
+d) Assignee:
+        Eunsoo, implement vector library.
+        Samuel, implement shape class with a data member representing ID.
+        John, implement parsing object that reads in IDs of shapes.
+e) Estimation: 8
+f) Priority: 6
+g) Done:
+        User is able to sort the shapes.
+        User is able to compare the shape objects, and is promted the information.
         
-
 Baseline story point estimate value of one = 2 hrs of development time for a single developer
