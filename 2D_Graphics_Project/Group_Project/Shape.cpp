@@ -1,5 +1,5 @@
 /*******************************************************************************
- * AUTHOR         : Samuel Vilchez, John, Eunsoo An
+ * AUTHOR         : Samuel Vilchez, John, Eunsoo An, Vee
  * STUDENT ID     : 1078959
  * GROUP PROJECT  : 2D Graphics Modeler Inc.
  * CLASS          : CS1C
@@ -12,21 +12,41 @@ Shape::Shape()
 {
     shapeId = 0;
     shapeType = "Empty";
-    penColor = -1;
-    penWidth = -1;
-    penStyle = -1;
-    penCapStyle = -1;
-    penJoinStyle = -1;
 }
 
-Shape::Shape(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::GlobalColor penColor, 
-             int penWidth, Qt::PenStyle penStyle, Qt::PenCapStyle penCapStyle, Qt::PenJoinStyle penJoinStyle)
-             :shapeId(shapeId), shapeType(shapeType), shapeDimensions(shapeDimensions),
-              penColor(penColor), penWidth(penWidth), penStyle(penStyle),
-              penCapStyle(penCapStyle), penJoinStyle(penJoinStyle)
+Shape::Shape(int shapeId, string shapeType, QPen pen, QBrush brush)
 {
+    shapeId = shapeId;
+    shapeType = shapeType;
+    this->pen = pen;
+    this->brush = brush;
 }
 
 Shape::~Shape()
 {
+}
+
+void Shape::SetPen(const QPen &pen)
+{
+    this->pen = pen;
+}
+
+void Shape::SetBrush(const QBrush &brush)
+{
+    this->brush = brush;
+}
+
+QPen Shape::GetPen() const
+{
+    return pen;
+}
+
+QBrush Shape::GetBrush() const
+{
+    return brush;
+}
+
+QPainter Shape::GetQPainter();
+{
+    return painter; //maybe be a refrence
 }

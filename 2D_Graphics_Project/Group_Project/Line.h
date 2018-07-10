@@ -1,5 +1,5 @@
 /*******************************************************************************
- * AUTHOR         : Samuel Vilchez, John, Eunsoo An
+ * AUTHOR         : Samuel Vilchez, John, Eunsoo An, Vee
  * STUDENT ID     : 1078959
  * GROUP PROJECT  : 2D Graphics Modeler Inc.
  * CLASS          : CS1C
@@ -15,8 +15,7 @@ class Line: public Shape
 {
     public:
         Line();
-        Line(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::GlobalColor penColor, 
-             int penWidth, Qt::PenStyle, penStyle, Qt::PenCapStyle penCapStyle, Qt::PenJoinStyle penJoinStyle);
+        Line(int shapeId, string shapeType, QPen pen, QBrush brush), QPoint pointBegin, QPoint pointEnd);
         ~Line();
 
         void Draw() override;
@@ -25,6 +24,8 @@ class Line: public Shape
         float Area() override;
 
     private:
+        QPoint pointBegin;
+        QPoint pointEnd;
 };
 
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * AUTHOR         : Samuel Vilchez, John, Eunsoo An
+ * AUTHOR         : Samuel Vilchez, John, Eunsoo An, Vee
  * STUDENT ID     : 1078959
  * GROUP PROJECT  : 2D Graphics Modeler Inc.
  * CLASS          : CS1C
@@ -11,13 +11,13 @@
 
 #include"MyHeader.h"
 
+const int ELLIPSE_DIM_SIZE = 4;
+
 class Ellipse: public Shape
 {
     public: 
         Ellipse();
-        Ellipse(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::GlobalColor penColor, 
-                int penWidth, Qt::PenStyle, penStyle, Qt::PenCapStyle penCapStyle, 
-                Qt::PenJoinStyle penJoinStyle, Qt::GlobalColor brushColor, Qt::BrushStyle brushStyle);
+        Ellipse(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Ellipse();
 
         void Draw() override;
@@ -26,8 +26,7 @@ class Ellipse: public Shape
         float Area() override;
     
     private:
-        Qt::GlobalColor brushColor;
-	    Qt::BrushStyle brushStyle;
+        vector<int> shapeDimensions;
 };
 
 

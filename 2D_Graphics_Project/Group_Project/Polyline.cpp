@@ -6,28 +6,27 @@
  * SECTION        : MTWTh 4:30 - 7:25pm
  * DUE DATE       : 7/26/2018
  ******************************************************************************/
-#ifndef POLYLINE_H_
-#define POLYLINE_H_
 
 #include"MyHeader.h"
 
-class Polyline: public Shape
+Polyline::Polyline()
 {
-    public: 
-        Polyline()
-        Polyline(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
-        ~Polyline();
 
-        void Draw() override;
-        void Move() override;
-        int Perimeter() override;
-        float Area() override;
+}
 
-    private: 
-        vector<int> shapeDimensions(4);
-};
+Polyline::Polyline(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                  :Shape(shapeId, shapeType, pen, brush)
+                  ,shapeDimensions(shapeDimensions)
+{
 
-void Polyline::draw()
+}
+
+Polyline::~Polyline()
+[
+    
+]
+
+void Polyline::draw() override
 {
     GetQPainter().setpen(GetPen());
     GetQPainter().setBrush(GetBrush());
@@ -37,6 +36,20 @@ void Polyline::draw()
     //draw the polyline (passing in the points of the vector)
 
     GetQPainter().restore();
+
 }
 
-#endif
+void Polyline::Move() override
+{
+
+}
+
+int Polyline::Perimeter() override
+{
+
+}
+
+float Polyline::Area() override
+{
+
+}
