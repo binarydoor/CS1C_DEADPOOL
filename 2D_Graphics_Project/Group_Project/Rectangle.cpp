@@ -7,44 +7,48 @@
  * DUE DATE       : 7/26/2018
  ******************************************************************************/
 #include"MyHeader.h"
-const int LINE_DIM_SIZE = 4; 
 
-Line::Line()
+Rectangle::Rectangle()
 {
     shapeId = 0;
-    shapeType = "Line";
+    shapeType = "Rectangle";
+    //vector initialization
 }
 
-Line::Line(int shapeId, string shapeType, QPen pen, QBrush brush, QPoint pointBegin, QPoint pointEnd)
-           :Shape(shapeId, shapeType, pen, brush)
-           ,pointBegin(pointBegin)
-           ,pointEnd(pointEnd)
+Rectangle::Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                    :Shape(shapeId, shapeType, pen, brush)
+                    ,shapeDimensions(shapeDimensions)
 {
 }
 
-void Line::Draw() override
+Rectangle::~Rectangle()
+{
+
+}
+
+void Rectangle::Draw() override
 {
     GetQPainter().setpen(GetPen());
     GetQPainter().setbrush(GetBrush());
 
     GetQPainter().save();
 
-    GetQPainter().drawline(pointBegin, pointEnd);
+    //draw the rectangle
 
     GetQPainter().restore();
 }
 
-void Line::Move() override
+void Rectangle::Move() override
 {
-    //implement move
+    //implment move similar to draw move coordinates
 }
 
-void Line::Perimeter() override
+int Rectangle::Perimeter() override
 {
-    //implement perimeter
+
 }
 
-void Line::Area() override
+float Rectangle::Area() override
 {
-    //implement area
+
 }

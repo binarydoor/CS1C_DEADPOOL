@@ -27,16 +27,5 @@ class Polyline: public Shape
         vector<int> shapeDimensions(4);
 };
 
-void Polyline::draw()
-{
-    GetQPainter().setpen(GetPen());
-    GetQPainter().setBrush(GetBrush());
-
-    GetQPainter().save();
-
-    //draw the polyline (passing in the points of the vector)
-
-    GetQPainter().restore();
-}
 
 #endif

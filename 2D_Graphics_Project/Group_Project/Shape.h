@@ -20,9 +20,6 @@ class Shape
          * CONSTRUCTOR & DESTRUCTOR *
          ****************************/
         Shape();
-        //professor had this in his code not really sure what it does thou
-        // he had this as a parameter( QPaintDevice *device ) i did not include it because
-        // i dont see any use of it. 
         Shape(/*QPaintDevice *device*/int shapeId, string shapeType, QPen pen, QBrush brush);
         virtual ~Shape();
 
@@ -39,11 +36,10 @@ class Shape
 
     protected:
         QPainter GetQPainter();
-        void PaintEvent(QPaintEvent *event);
 
     private:
         QPainter painter; // needs qpaintdevice ?
-        int shapeId;   
+        int shapeId;
         string shapeType;
         QPen pen;
         QBrush brush;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * AUTHOR         : Samuel Vilchez, John, Eunsoo An
+ * AUTHOR         : Samuel Vilchez, John, Eunsoo An, Vee
  * STUDENT ID     : 1078959
  * GROUP PROJECT  : 2D Graphics Modeler Inc.
  * CLASS          : CS1C
@@ -15,9 +15,7 @@ class Rectangle: public Shape
 {
     public: 
         Rectangle();
-        Rectangle(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::GlobalColor penColor, 
-                  int penWidth, Qt::PenStyle, penStyle, Qt::PenCapStyle penCapStyle, 
-                  Qt::PenJoinStyle penJoinStyle, Qt::GlobalColor brushColor, Qt::BrushStyle brushStyle);
+        Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Rectangle();
 
         void Draw() override;
@@ -26,8 +24,7 @@ class Rectangle: public Shape
         float Area() override;
 
     private:
-        Qt::GlobalColor brushColor;
-	    Qt::BrushStyle brushStyle;
+        vector<int> shapeDimensions;
 };
 
 #endif 

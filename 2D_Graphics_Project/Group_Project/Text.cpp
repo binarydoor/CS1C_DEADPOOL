@@ -6,26 +6,9 @@
  * SECTION        : MTWTh 4:30 - 7:25pm
  * DUE DATE       : 7/26/2018
  ******************************************************************************/
-#ifndef POLYGON_H_
-#define POLYGON_H_
-
 #include"MyHeader.h"
 
-class Polygon: public Shape 
+Text::Text()
 {
-    public: 
-        Polygon();
-        Polygon(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
-        ~Polygon();
-
-        void Draw() override;
-        void Move() override;
-        int Perimeter() override;
-        float Area() override;
-
-    private:
-        vector<int> shapeDimensions;
-};
-
-
-#endif 
+    
+}

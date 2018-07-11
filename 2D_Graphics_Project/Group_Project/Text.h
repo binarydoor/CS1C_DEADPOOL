@@ -1,5 +1,5 @@
 /*******************************************************************************
- * AUTHOR         : Samuel Vilchez, John, Eunsoo An
+ * AUTHOR         : Samuel Vilchez, John, Eunsoo An, Vee
  * STUDENT ID     : 1078959
  * GROUP PROJECT  : 2D Graphics Modeler Inc.
  * CLASS          : CS1C
@@ -17,7 +17,7 @@ class Text: public Shape
         Text();
         Text(string tectString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
              int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
-             Qt::Weight textFontWeight);
+             Qt::Weight textFontWeight, int shapeId, string shapeType, QPen pen, QBrush brush);
         ~Text();
 
         void Draw() override;
