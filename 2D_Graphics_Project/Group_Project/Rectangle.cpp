@@ -15,15 +15,24 @@ Rectangle::Rectangle()
     //vector initialization
 }
 
-Rectangle::Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions)
+//alternate constructor shapeDimensions should only have the first coordinate
+Rectangle::Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
+                     int l, int w)
                     :Shape(shapeId, shapeType, pen, brush)
                     ,shapeDimensions(shapeDimensions)
 {
+    height = l;
+    width = w;
 }
 
 Rectangle::~Rectangle()
 {
+}
 
+void Rectangle::SetXY(int x, int y)
+{
+    shapeDimensions[0] = x;
+    shapeDimensions[1] = y;
 }
 
 void Rectangle::Draw() override
@@ -33,7 +42,7 @@ void Rectangle::Draw() override
 
     GetQPainter().save();
 
-    //draw the rectangle
+    GetQPainter().drawRect(shapeDimensions[0], shapeDimensions[1], width, height);
 
     GetQPainter().restore();
 }
@@ -45,10 +54,10 @@ void Rectangle::Move() override
 
 int Rectangle::Perimeter() override
 {
-
+    return (2 * length) + (2 * width);
 }
 
 float Rectangle::Area() override
 {
-
+    return (length * width);
 }

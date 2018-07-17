@@ -11,14 +11,17 @@
 
 #include"MyHeader.h"
 
-const int ELLIPSE_DIM_SIZE = 4;
+const int ELLIPSE_DIM_SIZE = 2;
 
 class Ellipse: public Shape
 {
     public: 
         Ellipse();
-        Ellipse(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Ellipse(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
+                int a, int b);
         ~Ellipse();
+
+        void SetNewMoveCoordinate(int x, int y);
 
         void Draw() override;
         void Move() override;
@@ -27,6 +30,8 @@ class Ellipse: public Shape
     
     private:
         vector<int> shapeDimensions;
+        int majorAxis
+        int semiMinorAxis;
 };
 
 

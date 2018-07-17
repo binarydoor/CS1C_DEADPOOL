@@ -15,9 +15,10 @@ class Text: public Shape
 {
     public: 
         Text();
-        Text(string tectString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
+        Text(string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
              int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
-             Qt::Weight textFontWeight, int shapeId, string shapeType, QPen pen, QBrush brush);
+             Qt::Weight textFontWeight, int shapeId, string shapeType, QPen pen, QBrush brush, 
+             vector<int> shapeDimensions);
         ~Text();
 
         void Draw() override;
@@ -27,6 +28,9 @@ class Text: public Shape
 
     private:
         string textString;
+        vector<int> shapeDimensions;
+        int height;
+        int width;
         Qt::GlobalColor textColor;
 	    Qt::AlignmentFlag textAlignment;
 	    int textPointSize;

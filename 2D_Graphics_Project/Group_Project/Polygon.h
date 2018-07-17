@@ -16,15 +16,23 @@ class Polygon: public Shape
     public: 
         Polygon();
         Polygon(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
-        ~Polygon();
+        virtual ~Polygon();
 
+        //call change dimensions before move 
+        void ChangeDimensions(const vector<int>& xyPoints);
         void Draw() override;
         void Move() override;
         int Perimeter() override;
         float Area() override;
 
+    protected:
+        //should only be called when moving an array or changing the polygon
+        void SetPointsArray();
+
     private:
         vector<int> shapeDimensions;
+        QPoint *points; // array of points used to draw polygon
+        int numOfPoints;
 };
 
 

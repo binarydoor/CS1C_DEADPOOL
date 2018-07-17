@@ -18,13 +18,20 @@ class Polyline: public Shape
         Polyline(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Polyline();
 
+        void SetDimensions(const vector<int>& xyPoints); 
+
         void Draw() override;
         void Move() override;
         int Perimeter() override;
         float Area() override;
 
+    protected:
+        void SetPointsArray();
+        
     private: 
-        vector<int> shapeDimensions(4);
+        vector<int> shapeDimensions;
+        QPoint *points; // similar to polygon
+        int numOfPoints;
 };
 
 

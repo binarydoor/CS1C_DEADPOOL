@@ -36,15 +36,24 @@ void Line::Draw() override
 
 void Line::Move() override
 {
-    //implement move
+    GetQPainter().setpen(GetPen());
+    GetQPainter().setbrush(GetBrush());
+
+    GetQPainter().save();
+
+    GetQPainter().drawline(x1, y1, x2, y2);
+
+    GetQPainter().restore();
 }
 
 void Line::Perimeter() override
 {
-    //implement perimeter
+    //line has no perimeter
+    //dumby method
 }
 
 void Line::Area() override
 {
-    //implement area
+    //line has no area
+    //dumby method
 }

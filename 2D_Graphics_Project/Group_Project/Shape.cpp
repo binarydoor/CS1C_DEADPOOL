@@ -46,7 +46,7 @@ QBrush Shape::GetBrush() const
     return brush;
 }
 
-QPainter Shape::GetQPainter();
+QPainter& Shape::GetQPainter();
 {
-    return painter; //maybe be a refrence
+    return painter; 
 }
