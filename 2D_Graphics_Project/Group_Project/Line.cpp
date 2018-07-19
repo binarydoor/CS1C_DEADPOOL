@@ -12,14 +12,15 @@ const int LINE_DIM_SIZE = 4;
 Line::Line()
 {
     shapeId = 0;
-    shapeType = "Line";
 }
 
-Line::Line(int shapeId, string shapeType, QPen pen, QBrush brush, QPoint pointBegin, QPoint pointEnd)
-           :Shape(shapeId, shapeType, pen, brush)
-           ,pointBegin(pointBegin)
-           ,pointEnd(pointEnd)
+Line::Line(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+           :Shape(shapeId, pen, brush, shapeDimensions)
 {
+    pointBegin.setX(shapeDimensions[0]);
+    pointBegin.setY(shapeDimensions[1]);
+    pointEnd.setX(shapeDimensions[2]);
+    pointEnd.setY(shapeDimensions[3]);
 }
 
 void Line::Draw() override

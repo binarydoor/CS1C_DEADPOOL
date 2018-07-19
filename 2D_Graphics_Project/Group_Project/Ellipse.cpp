@@ -19,20 +19,11 @@ Ellipse::Ellipse()
 //alternate constructor 
 //note shape dimensions should be created as temp and passed in
 // as well as pen and brush refrence qpen class and qbrush class
-Ellipse::Ellipse(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
-                 int a, int b)
-                :Shape(shapeId, shapeType, pen, brush)
-                ,shapeDimensions(shapeDimensions)
+Ellipse::Ellipse(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                :Shape(shapeId, shapeType, pen, brush, shapeDimensions)
 {
-    majorAxis = a;
-    semiMinorAxis = b;
-}
-
-void Ellipse::SetNewMoveCoordinate(int x, int y)
-{
-    //will only change the first coordinate not change the shape
-    shapeDimensions[0] = x;
-    shapeDimensions[1] = y;
+    majorAxis = shapeDimensions[2];
+    semiMinorAxis = shapeDimensions[3];
 }
 
 void Ellipse::draw() override

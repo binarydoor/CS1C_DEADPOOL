@@ -12,14 +12,12 @@
 Polyline::Polyline()
 {
     shapeId = 0;
-    shapeType = "Polyline";
     numOfPoints = 0;
     points = nullptr;
 }
 
-Polyline::Polyline(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions)
-                  :Shape(shapeId, shapeType, pen, brush)
-                  ,shapeDimensions(shapeDimensions)
+Polyline::Polyline(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                  :Shape(shapeId, pen, brush, shapeDimensions)
 {
     int count;
 

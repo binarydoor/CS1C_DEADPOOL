@@ -11,13 +11,12 @@
 Shape::Shape()
 {
     shapeId = 0;
-    shapeType = "Empty";
 }
 
-Shape::Shape(int shapeId, string shapeType, QPen pen, QBrush brush)
+Shape::Shape(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+:shapeId(shapeId)
+,shapeDimensions(shapeDimensions)
 {
-    shapeId = shapeId;
-    shapeType = shapeType;
     this->pen = pen;
     this->brush = brush;
 }
@@ -34,6 +33,12 @@ void Shape::SetPen(const QPen &pen)
 void Shape::SetBrush(const QBrush &brush)
 {
     this->brush = brush;
+}
+
+void Rectangle::SetXY(int x, int y)
+{
+    shapeDimensions[0] = x;
+    shapeDimensions[1] = y;
 }
 
 QPen Shape::GetPen() const

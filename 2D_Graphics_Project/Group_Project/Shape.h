@@ -23,12 +23,13 @@ class Shape
          * CONSTRUCTOR & DESTRUCTOR *
          ****************************/
         Shape();
-        Shape(/*QPaintDevice *device*/int shapeId, string shapeType, QPen pen, QBrush brush);
+        Shape(/*QPaintDevice *device*/int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         virtual ~Shape();
 
         void SetPen(const QPen &pen);
         void SetBrush(const QBrush &brush);
 
+        void SetXY(int x, int y);
 
         QPen GetPen() const;
         QBrush GetBrush() const;
@@ -40,11 +41,12 @@ class Shape
 
     protected:
         QPainter& GetQPainter();
+        vector<int> shapeDimensions; // for now protected can change to get function if necessary
+                                     // derived classes need access
 
     private:
         QPainter painter; // needs qpaintdevice ?
         int shapeId;
-        string shapeType;
         QPen pen;
         QBrush brush;
 };

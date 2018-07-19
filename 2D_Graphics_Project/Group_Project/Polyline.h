@@ -15,7 +15,7 @@ class Polyline: public Shape
 {
     public: 
         Polyline()
-        Polyline(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Polyline(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Polyline();
 
         void SetDimensions(const vector<int>& xyPoints); 
@@ -28,8 +28,7 @@ class Polyline: public Shape
     protected:
         void SetPointsArray();
         
-    private: 
-        vector<int> shapeDimensions;
+    private:
         QPoint *points; // similar to polygon
         int numOfPoints;
 };

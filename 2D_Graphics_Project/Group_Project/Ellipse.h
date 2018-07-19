@@ -17,11 +17,8 @@ class Ellipse: public Shape
 {
     public: 
         Ellipse();
-        Ellipse(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
-                int a, int b);
+        Ellipse(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Ellipse();
-
-        void SetNewMoveCoordinate(int x, int y);
 
         void Draw() override;
         void Move() override;
@@ -29,7 +26,6 @@ class Ellipse: public Shape
         float Area() override;
     
     private:
-        vector<int> shapeDimensions;
         int majorAxis
         int semiMinorAxis;
 };

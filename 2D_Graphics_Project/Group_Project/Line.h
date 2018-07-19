@@ -15,7 +15,7 @@ class Line: public Shape
 {
     public:
         Line();
-        Line(int shapeId, string shapeType, QPen pen, QBrush brush, QPoint pointBegin, QPoint pointEnd);
+        Line(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Line();
 
         void Draw() override;

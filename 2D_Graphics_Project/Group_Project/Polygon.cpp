@@ -11,7 +11,6 @@
 Polygon::Polygon()
 {
     shapeId = 0;
-    shapeType = "Polygon";
     points = nullptr;
     numOfPoints = 0;
     //initialize polygon
@@ -19,9 +18,8 @@ Polygon::Polygon()
 
 //when creating a polygon have a sequence of nth coordinates because we dont know how big our vector is
 // will be depend on the user (input file in our case) (x1, y1, x2, y2 ... xN, yN)
-Polygon::Polygon(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions)
-                 :Shape(shapeId, shapeType, pen, brush)
-                 ,shapeDimensions(shapeDimensions)
+Polygon::Polygon(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                 :Shape(shapeId, pen, brush, shapeDimensions)
 {
     SetPointsArray();
 }

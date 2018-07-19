@@ -15,11 +15,9 @@ class Rectangle: public Shape
 {
     public: 
         Rectangle();
-        Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
+        Rectangle(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
                   int l, int w);
         ~Rectangle();
-
-        void SetXY(int x, int y);
 
         void Draw() override;
         void Move() override;
@@ -27,7 +25,6 @@ class Rectangle: public Shape
         float Area() override;
 
     private:
-        vector<int> shapeDimensions;
         int height;
         int width;
 };

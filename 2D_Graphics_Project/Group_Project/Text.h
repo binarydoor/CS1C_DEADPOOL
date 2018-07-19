@@ -17,7 +17,7 @@ class Text: public Shape
         Text();
         Text(string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
              int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
-             Qt::Weight textFontWeight, int shapeId, string shapeType, QPen pen, QBrush brush, 
+             Qt::Weight textFontWeight, int shapeId, QPen pen, QBrush brush, 
              vector<int> shapeDimensions);
         ~Text();
 
@@ -28,7 +28,6 @@ class Text: public Shape
 
     private:
         string textString;
-        vector<int> shapeDimensions;
         int height;
         int width;
         Qt::GlobalColor textColor;

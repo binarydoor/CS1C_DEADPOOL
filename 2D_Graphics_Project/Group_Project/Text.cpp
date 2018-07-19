@@ -17,9 +17,9 @@ Text::Text()
 
 Text::Text(string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
            int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
-           Qt::Weight textFontWeight, int shapeId, string shapeType, QPen pen, QBrush brush, 
+           Qt::Weight textFontWeight, int shapeId, QPen pen, QBrush brush, 
            vector<int> shapeDimensions)
-           :Shape(shapeId, shapeType, pen, brush)
+           :Shape(shapeId, pen, brush, shapeDimensions)
            ,textString(textString)
            ,textColor(textColor)
            ,textAlignment(textAlignment)

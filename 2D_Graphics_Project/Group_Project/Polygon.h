@@ -15,7 +15,7 @@ class Polygon: public Shape
 {
     public: 
         Polygon();
-        Polygon(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Polygon(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         virtual ~Polygon();
 
         //call change dimensions before move 
@@ -30,7 +30,6 @@ class Polygon: public Shape
         void SetPointsArray();
 
     private:
-        vector<int> shapeDimensions;
         QPoint *points; // array of points used to draw polygon
         int numOfPoints;
 };

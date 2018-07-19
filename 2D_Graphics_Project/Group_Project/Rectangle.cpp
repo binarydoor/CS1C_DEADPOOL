@@ -11,15 +11,12 @@
 Rectangle::Rectangle()
 {
     shapeId = 0;
-    shapeType = "Rectangle";
-    //vector initialization
 }
 
 //alternate constructor shapeDimensions should only have the first coordinate
-Rectangle::Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vector<int> shapeDimensions,
+Rectangle::Rectangle(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
                      int l, int w)
-                    :Shape(shapeId, shapeType, pen, brush)
-                    ,shapeDimensions(shapeDimensions)
+                    :Shape(shapeId, pen, brush, shapeDimensions)
 {
     height = l;
     width = w;
@@ -27,12 +24,6 @@ Rectangle::Rectangle(int shapeId, string shapeType, QPen pen, QBrush brush, vect
 
 Rectangle::~Rectangle()
 {
-}
-
-void Rectangle::SetXY(int x, int y)
-{
-    shapeDimensions[0] = x;
-    shapeDimensions[1] = y;
 }
 
 void Rectangle::Draw() override
@@ -50,6 +41,7 @@ void Rectangle::Draw() override
 void Rectangle::Move() override
 {
     //implment move similar to draw move coordinates
+    //are we just moving x y coordinates then drawing again
 }
 
 int Rectangle::Perimeter() override
