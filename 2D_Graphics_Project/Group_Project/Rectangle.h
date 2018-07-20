@@ -15,12 +15,12 @@ class Rectangle: public Shape
 {
     public: 
         Rectangle();
-        Rectangle(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
+        Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
                   int l, int w);
         ~Rectangle();
 
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;
         float Area() override;
 

@@ -14,8 +14,8 @@ Line::Line()
     shapeId = 0;
 }
 
-Line::Line(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
-           :Shape(shapeId, pen, brush, shapeDimensions)
+Line::Line(QPaintDevice* device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+           :Shape(device, shapeId, pen, brush, shapeDimensions)
 {
     pointBegin.setX(shapeDimensions[0]);
     pointBegin.setY(shapeDimensions[1]);
@@ -35,14 +35,17 @@ void Line::Draw() override
     GetQPainter().restore();
 }
 
-void Line::Move() override
+void Line::Move(int x, int y) override
 {
+    //PROCESSING - updates x and y
+    SetXY(x, y);
+
     GetQPainter().setpen(GetPen());
     GetQPainter().setbrush(GetBrush());
 
     GetQPainter().save();
 
-    GetQPainter().drawline(x1, y1, x2, y2);
+    GetQPainter().drawline(shapeDimensions[0], shapeDimensions[1], shapeDimensions[2], shapeDimensions[3]);
 
     GetQPainter().restore();
 }
@@ -51,10 +54,12 @@ void Line::Perimeter() override
 {
     //line has no perimeter
     //dumby method
+    return -1; // error value
 }
 
 void Line::Area() override
 {
     //line has no area
     //dumby method
+    return -1; // error value
 }

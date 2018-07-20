@@ -15,13 +15,13 @@ class Polygon: public Shape
 {
     public: 
         Polygon();
-        Polygon(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Polygon(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         virtual ~Polygon();
 
         //call change dimensions before move 
         void ChangeDimensions(const vector<int>& xyPoints);
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;
         float Area() override;
 

@@ -15,13 +15,13 @@ class Polyline: public Shape
 {
     public: 
         Polyline()
-        Polyline(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Polyline(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Polyline();
 
         void SetDimensions(const vector<int>& xyPoints); 
 
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;
         float Area() override;
 

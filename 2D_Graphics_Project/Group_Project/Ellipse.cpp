@@ -12,15 +12,14 @@
 Ellipse::Ellipse()
 {
     shapeId = 0;
-    shapeType = "Ellipse";
     shapeDimensions.resize(ELLIPSE_DIM_SIZE);
 }
 
 //alternate constructor 
 //note shape dimensions should be created as temp and passed in
 // as well as pen and brush refrence qpen class and qbrush class
-Ellipse::Ellipse(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
-                :Shape(shapeId, shapeType, pen, brush, shapeDimensions)
+Ellipse::Ellipse(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                :Shape(device, shapeId, shapeType, pen, brush, shapeDimensions)
 {
     majorAxis = shapeDimensions[2];
     semiMinorAxis = shapeDimensions[3];
@@ -39,8 +38,9 @@ void Ellipse::draw() override
     GetQPainter().restore();
 }
 
-void Ellipse::Move() override
+void Ellipse::Move(int x, int y) override
 {
+    SetXY(x, y);
     //be sure to change coordinates before calling move method
     GetQPainter().setpen(GetPen());
     GetQPainter().setbrush(GetBrush());
@@ -57,6 +57,7 @@ int Ellipse::Perimeter() override
 {
     // given the major/minor axis calculate perimeter
     // calculate circumference
+    return 1; // in order to compile
 }
 
 float Ellipse::Area() override

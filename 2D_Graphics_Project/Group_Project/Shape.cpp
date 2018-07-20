@@ -13,8 +13,9 @@ Shape::Shape()
     shapeId = 0;
 }
 
-Shape::Shape(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
-:shapeId(shapeId)
+Shape::Shape(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+:painter(device)
+,shapeId(shapeId)
 ,shapeDimensions(shapeDimensions)
 {
     this->pen = pen;
@@ -54,4 +55,15 @@ QBrush Shape::GetBrush() const
 QPainter& Shape::GetQPainter();
 {
     return painter; 
+}
+
+//overload equality operator and less than relational operator will compare shape object id's
+bool Shape::operator == (const Shape& rhs) const
+{
+    return (shapeId == rhs.shapeId);
+}
+
+bool Shape::operator < (const Shape& rhs) const
+{
+    return (shapeId < rhs.shapeId);
 }

@@ -11,17 +11,17 @@
 
 #include"MyHeader.h"
 
-const int ELLIPSE_DIM_SIZE = 2;
+const int ELLIPSE_DIM_SIZE = 4;
 
 class Ellipse: public Shape
 {
     public: 
         Ellipse();
-        Ellipse(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Ellipse(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Ellipse();
 
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;
         float Area() override;
     

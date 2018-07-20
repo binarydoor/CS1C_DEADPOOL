@@ -16,8 +16,8 @@ Polyline::Polyline()
     points = nullptr;
 }
 
-Polyline::Polyline(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
-                  :Shape(shapeId, pen, brush, shapeDimensions)
+Polyline::Polyline(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                  :Shape(device, shapeId, pen, brush, shapeDimensions)
 {
     int count;
 
@@ -52,7 +52,6 @@ Polyline::~Polyline()
     delete [] points;
 ]
 
-//call before calling move
 void Polyline::SetDimensions(const vector<int>& xyPoints)
 {
     shapeDimensions = xyPoints;
@@ -71,20 +70,22 @@ void Polyline::draw() override
 
 }
 
-void Polyline::Move() override
+void Polyline::Move(int x, int y) override
 {
-    SetPointsArray();
+    SetXY(x, y);
     Draw();
 }
 
 int Polyline::Perimeter() override
 {
-    // ?
+    // has no perimeter dumby function 
+    return -1; // error value returned
 }
 
 float Polyline::Area() override
 {
-    // ? 
+    // has no area dumby function 
+    return -1; // error value returned
 }
 
 void Polyline::SetPointsArray()

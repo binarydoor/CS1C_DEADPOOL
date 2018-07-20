@@ -13,7 +13,6 @@
 
 class Shape
 {
-    Shape& operator = (const Shape& rhs) const; 
     //overload equality operator and less than relational operator will compare shape object id's
     bool operator == (const Shape& rhs) const;
     bool operator < (const Shape& rhs) const;
@@ -23,7 +22,7 @@ class Shape
          * CONSTRUCTOR & DESTRUCTOR *
          ****************************/
         Shape();
-        Shape(/*QPaintDevice *device*/int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Shape(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         virtual ~Shape();
 
         void SetPen(const QPen &pen);
@@ -35,7 +34,7 @@ class Shape
         QBrush GetBrush() const;
 
         virtual void Draw() = 0;
-        virtual void Move() = 0;
+        virtual void Move(int x, int y) = 0;
         virtual int Perimeter() = 0;
         virtual float Area() = 0;
 

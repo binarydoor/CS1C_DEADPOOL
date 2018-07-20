@@ -15,11 +15,11 @@ class Line: public Shape
 {
     public:
         Line();
-        Line(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+        Line(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Line();
 
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;  // no actual implementation
         float Area() override;     // no actual implementation
 

@@ -18,8 +18,8 @@ Polygon::Polygon()
 
 //when creating a polygon have a sequence of nth coordinates because we dont know how big our vector is
 // will be depend on the user (input file in our case) (x1, y1, x2, y2 ... xN, yN)
-Polygon::Polygon(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
-                 :Shape(shapeId, pen, brush, shapeDimensions)
+Polygon::Polygon(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+                 :Shape(device, shapeId, pen, brush, shapeDimensions)
 {
     SetPointsArray();
 }
@@ -46,10 +46,9 @@ void Polygon::draw() override
     GetQPainter().restore();
 }
 
-void Polygon::Move() override
+void Polygon::Move(int x, int y) override
 {
-    SetPointsArray(); // deletes previous points array
-                      // creates a new array of points 
+    SetXY(x, y);
 
     //redraws the polygon after deleting previous points array
     draw();
@@ -57,12 +56,14 @@ void Polygon::Move() override
 
 int Polygon::Perimeter() override
 {
-    // ?
+    // attempt to calculate perimeter
+    return 1; // so it will compile
 }
 
 float Polygon::Area() override
 {
-    // ?
+    // attempt to calculate area
+    return 1; // so it will compile
 }
 
 void Polygon::SetPointsArray()

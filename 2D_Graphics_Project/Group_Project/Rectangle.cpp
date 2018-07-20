@@ -14,9 +14,9 @@ Rectangle::Rectangle()
 }
 
 //alternate constructor shapeDimensions should only have the first coordinate
-Rectangle::Rectangle(int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
+Rectangle::Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
                      int l, int w)
-                    :Shape(shapeId, pen, brush, shapeDimensions)
+                    :Shape(device, shapeId, pen, brush, shapeDimensions)
 {
     height = l;
     width = w;
@@ -38,10 +38,10 @@ void Rectangle::Draw() override
     GetQPainter().restore();
 }
 
-void Rectangle::Move() override
+void Rectangle::Move(int x, int y) override
 {
-    //implment move similar to draw move coordinates
-    //are we just moving x y coordinates then drawing again
+    SetXY(x, y);
+    Draw();
 }
 
 int Rectangle::Perimeter() override

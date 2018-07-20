@@ -15,14 +15,14 @@ class Text: public Shape
 {
     public: 
         Text();
-        Text(string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
+        Text(QPaintDevice *device, string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
              int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
              Qt::Weight textFontWeight, int shapeId, QPen pen, QBrush brush, 
              vector<int> shapeDimensions);
         ~Text();
 
         void Draw() override;
-        void Move() override;
+        void Move(int x, int y) override;
         int Perimeter() override;
         float Area() override;
 

@@ -15,11 +15,11 @@ Text::Text()
     
 }
 
-Text::Text(string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
+Text::Text(QPaintDevice *device, string textString, Qt::GlobalColor textColor, Qt::AlignmentFlag textAlignment,
            int textPointSize, string textFontFamily, Qt::Style textFontStyle, 
            Qt::Weight textFontWeight, int shapeId, QPen pen, QBrush brush, 
            vector<int> shapeDimensions)
-           :Shape(shapeId, pen, brush, shapeDimensions)
+           :Shape(device, shapeId, pen, brush, shapeDimensions)
            ,textString(textString)
            ,textColor(textColor)
            ,textAlignment(textAlignment)
@@ -47,17 +47,22 @@ void Text::Draw() override
     GetQPainter().restore();
 }
 
-void Text::Move() override
+void Text::Move(int x, int y) override
 {
-
+    SetXY(x, y);
+    Draw();
 }
 
 int Text::Perimeter() override
 {
-    // ?
+    // has no perimeter
+    // dumby function
+    return -1; // error return
 }
 
 float Text::Area() override
 {
-    // ?
+    // has no area
+    // dumby function
+    return -1; // error return
 }
