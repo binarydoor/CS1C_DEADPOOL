@@ -9,12 +9,14 @@
 class RenderArea:public QWidget
 {
 
+    public:
 
 
 
-    protected:
-        void paintEvent(QPaintEvent *event) override;
+        void paintEvent(QPaintEvent *event);
 
+    private:
+        RenderArea *canvas;
 
 };
 

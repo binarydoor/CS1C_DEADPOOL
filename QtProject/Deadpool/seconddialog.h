@@ -2,6 +2,7 @@
 #define SECONDDIALOG_H
 
 #include <QDialog>
+#include "renderarea.h"
 
 namespace Ui {
 class SecondDialog;
@@ -16,7 +17,13 @@ public:
     ~SecondDialog();
 
 private:
+    RenderArea *renderArea;
     Ui::SecondDialog *ui;
+
+    //my test code;
+protected:
+    void paintEvent(QPaintEvent *e);
+
 };
 
 #endif // SECONDDIALOG_H

@@ -26,7 +26,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    seconddialog.cpp
+    seconddialog.cpp \
+    renderarea.cpp
 
 HEADERS += \
         mainwindow.h \

@@ -31,3 +31,8 @@ void MainWindow::on_pushButton_login_clicked()
         QMessageBox::warning(this, "Login", "Username and password is not correct");
     }
 }
+
+//void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
+//{
+//    ui->renderCanvas->setShape(source);
+//}
