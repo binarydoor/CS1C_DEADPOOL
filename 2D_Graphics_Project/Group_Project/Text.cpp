@@ -53,14 +53,14 @@ void Text::Move(int x, int y) override
     Draw();
 }
 
-int Text::Perimeter() override
+double Text::Perimeter() override
 {
     // has no perimeter
     // dumby function
     return -1; // error return
 }
 
-float Text::Area() override
+double Text::Area() override
 {
     // has no area
     // dumby function

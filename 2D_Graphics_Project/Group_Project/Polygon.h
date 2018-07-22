@@ -22,8 +22,8 @@ class Polygon: public Shape
         void ChangeDimensions(const vector<int>& xyPoints);
         void Draw() override;
         void Move(int x, int y) override;
-        int Perimeter() override;
-        float Area() override;
+        double Perimeter() override;
+        double Area() override;
 
     protected:
         //should only be called when moving an array or changing the polygon

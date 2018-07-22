@@ -44,12 +44,12 @@ void Rectangle::Move(int x, int y) override
     Draw();
 }
 
-int Rectangle::Perimeter() override
+double Rectangle::Perimeter() override
 {
     return (2 * length) + (2 * width);
 }
 
-float Rectangle::Area() override
+double Rectangle::Area() override
 {
     return (length * width);
 }

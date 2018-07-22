@@ -53,7 +53,7 @@ void Ellipse::Move(int x, int y) override
     GetQPainter().restore();
 }
 
-int Ellipse::Perimeter() override
+double Ellipse::Perimeter() override
 {
     float pi = 3.14; 
     double perimeter;
@@ -63,7 +63,7 @@ int Ellipse::Perimeter() override
     return perimeter; // converts to int in return for approximation only
 }
 
-float Ellipse::Area() override
+double Ellipse::Area() override
 {
     float pi = 3.14;
     float area;

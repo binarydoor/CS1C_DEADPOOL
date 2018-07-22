@@ -50,14 +50,14 @@ void Line::Move(int x, int y) override
     GetQPainter().restore();
 }
 
-void Line::Perimeter() override
+double Line::Perimeter() override
 {
     //line has no perimeter
     //dumby method
     return -1; // error value
 }
 
-void Line::Area() override
+double Line::Area() override
 {
     //line has no area
     //dumby method

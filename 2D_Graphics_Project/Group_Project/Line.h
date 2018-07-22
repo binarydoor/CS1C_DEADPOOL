@@ -20,8 +20,8 @@ class Line: public Shape
 
         void Draw() override;
         void Move(int x, int y) override;
-        int Perimeter() override;  // no actual implementation
-        float Area() override;     // no actual implementation
+        double Perimeter() override;  // no actual implementation
+        double Area() override;     // no actual implementation
 
     private:
         QPoint pointBegin;

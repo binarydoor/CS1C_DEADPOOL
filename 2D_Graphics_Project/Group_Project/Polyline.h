@@ -22,8 +22,8 @@ class Polyline: public Shape
 
         void Draw() override;
         void Move(int x, int y) override;
-        int Perimeter() override;
-        float Area() override;
+        double Perimeter() override;
+        double Area() override;
 
     protected:
         void SetPointsArray();

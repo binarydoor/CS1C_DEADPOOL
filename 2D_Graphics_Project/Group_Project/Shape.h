@@ -35,8 +35,8 @@ class Shape
 
         virtual void Draw() = 0;
         virtual void Move(int x, int y) = 0;
-        virtual int Perimeter() = 0;
-        virtual float Area() = 0;
+        virtual double Perimeter() = 0;
+        virtual double Area() = 0;
 
     protected:
         QPainter& GetQPainter();
