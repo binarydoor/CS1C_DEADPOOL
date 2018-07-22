@@ -70,6 +70,6 @@ void SecondDialog::paintEvent(QPaintEvent *e)
 //    QPen pen;
 //    pen.setColor(color);
 //    painter.setPen(pen);
-    painter.drawText(10, 10, "Samuel Vilchez"); // just a test
+//    painter.drawText(10, 10, "Samuel Vilchez"); // just a test
 
 }
