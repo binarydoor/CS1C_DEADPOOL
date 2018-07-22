@@ -13,7 +13,10 @@
 #include<iomanip>
 #include<string>
 #include<sstream>
+#include<math.h>
+#include<exception>
 #include<QPainter>
+#include<QLine>
 
 using namespace std;
 

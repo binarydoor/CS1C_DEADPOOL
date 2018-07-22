@@ -44,7 +44,7 @@ class Shape
                                      // derived classes need access
 
     private:
-        QPainter painter; // needs qpaintdevice ?
+        QPainter painter; // needs qpaintdevice instantiate in constructor
         int shapeId;
         QPen pen;
         QBrush brush;

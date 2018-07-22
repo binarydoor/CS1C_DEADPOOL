@@ -56,8 +56,27 @@ void Polygon::Move(int x, int y) override
 
 int Polygon::Perimeter() override
 {
+    int sum = 0;
+    for (int index = 0; index < numOfPoints - 1; index++)
+    {
+        QLine myCurrentLine(points[index], points[index + 1]);
+        int a = myCurrentLine.dx();
+        int b = myCurrentLine.dy();
+        int cSquared = ( pow(a, 2.0) + pow(b, 2.0) );
+        double c = sqrt(cSquared);
+        
+        sum = sum + c;
+    }
+
+    myCurrentLine(points[0], points[numOfPoints - 1]);
+    a = myCurrentLine.dx();
+    b = myCurrentLine.dy();
+    cSquared = ( pow(a, 2.0) + pow(b, 2.0));
+    c = sqrt(cSquared);
+    sum += c;
+    
     // attempt to calculate perimeter
-    return 1; // so it will compile
+    return sum; // so it will compile
 }
 
 float Polygon::Area() override

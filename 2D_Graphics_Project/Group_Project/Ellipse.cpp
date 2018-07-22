@@ -55,9 +55,12 @@ void Ellipse::Move(int x, int y) override
 
 int Ellipse::Perimeter() override
 {
-    // given the major/minor axis calculate perimeter
-    // calculate circumference
-    return 1; // in order to compile
+    float pi = 3.14; 
+    double perimeter;
+
+    perimeter = 2 * pi * sqrt( ((pow(majorAxis, 2.0)) + (pow(semiMinorAxis, 2.0))) / 2.0 );
+
+    return perimeter; // converts to int in return for approximation only
 }
 
 float Ellipse::Area() override
