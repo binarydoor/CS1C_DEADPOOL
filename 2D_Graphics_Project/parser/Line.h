@@ -18,6 +18,7 @@ class Line: public Shape
         Line(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Line();
 
+        // Draw gets PD from Base class
         void Draw() override;
         void Move(int x, int y) override;
         double Perimeter() override;  // no actual implementation

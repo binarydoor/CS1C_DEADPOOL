@@ -1,7 +1,7 @@
 #include "parser2.cpp"
 
 
-void importFile(vector<Shape> &shapeVec, const string &fileName)
+void importFile(Qt::QPaintDevice *device, vector<Shape> &shapeVec, const string &fileName)
 {
 	int shape_counter = 0;	// necessary?
 	bool getting_data = false;
@@ -84,13 +84,18 @@ Line::Line(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::Globa
 			{
 				if (shapeType == "Line")
 				{
-					Qt::GlobalColor PenColor = whichColor(penColor);
-					Qt::PenStyle PenStyle = whichPenStyle(penStyle);
-					Qt::PenCapStyle PenCapStyle = whichPenCapStyle(penCapStyle);
-					Qt::PenJoinStyle PenJoinStyle = whichPenJoinStyle(penJoinStyle);
+					Qt::GlobalColor color = whichColor(penColor);
+					Qt::PenStyle style = whichPenStyle(penStyle);
+					Qt::PenCapStyle cap = whichPenCapStyle(penCapStyle);
+					Qt::PenJoinStyle joinstyle = whichPenJoinStyle(penJoinStyle);
+					Qt::QBrush qBrush(color);
+					Qt::QPen qPen(qBrush, penWidth, style, cap, )
+					Qt::Line line(#something, shapeID, )
 					Qt::Line line(shapeID, *shapeDimensions, PenColor, penWidth, PenStyle, PenCapStyle, PenJoinStyle);
 					shapeVec.push_back(line);
 				}
+				Line(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
+				QPen(const QBrush &brush, qreal width, Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap, Qt::PenJoinStyle join = Qt::BevelJoin)
 				else if (shapeType == "Something")
 				{
 
