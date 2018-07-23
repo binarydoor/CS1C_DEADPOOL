@@ -10,13 +10,15 @@ class RenderArea:public QWidget
 {
 
     public:
+        RenderArea(QWidget *parent = 0);
 
+        QSize minimumSizeHint() const override;
+        QSize sizeHint() const override;
 
 
         void paintEvent(QPaintEvent *event);
 
     private:
-        RenderArea *canvas;
 
 };
 

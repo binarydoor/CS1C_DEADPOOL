@@ -22,8 +22,6 @@ private:
 
     //my test code;
 protected:
-    void paintEvent(QPaintEvent *e);
-
 };
 
 #endif // SECONDDIALOG_H

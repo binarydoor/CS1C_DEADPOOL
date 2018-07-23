@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="RenderArea" native="true">
    <property name="geometry">
     <rect>
      <x>20</x>

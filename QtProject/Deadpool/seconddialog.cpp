@@ -2,11 +2,13 @@
 #include "ui_seconddialog.h"
 #include <QPainter>
 
+class RenderArea;
+
 SecondDialog::SecondDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SecondDialog)
 {
-//    renderArea = new RenderArea;
+    renderArea = new RenderArea; //what i commented
     ui->setupUi(this);
 
     ui->penWidthSpinBox->setMinimum(0);
@@ -53,6 +55,12 @@ SecondDialog::SecondDialog(QWidget *parent) :
     ui->brushStyleComboBox->addItem("VerPattern");
     ui->brushStyleComboBox->addItem("NoBrush");
 
+    QGridLayout *mainLayout = new QGridLayout;
+//! [9] //! [10]
+    mainLayout->setColumnStretch(0, 1);
+    mainLayout->setColumnStretch(3, 1);
+    mainLayout->addWidget(renderArea, 0, 0, 1, 4);
+
 }
 
 SecondDialog::~SecondDialog()
@@ -61,15 +69,16 @@ SecondDialog::~SecondDialog()
 }
 
 //my test
-void SecondDialog::paintEvent(QPaintEvent *e)
-{
-    QPainter painter(this);
-//    QColor color;
-//    color.setBlue(4);
+//void SecondDialog::paintEvent(QPaintEvent *e)
+//{
+//    QPainter painter(this);
+////    QColor color;
+////    color.setBlue(4);
 
-//    QPen pen;
-//    pen.setColor(color);
-//    painter.setPen(pen);
-//    painter.drawText(10, 10, "Samuel Vilchez"); // just a test
+////    QPen pen;
+////    pen.setColor(color);
+////    painter.setPen(pen);
+////    painter.drawText(10, 10, "Samuel Vilchez"); // just a test
 
-}
+//}
+
