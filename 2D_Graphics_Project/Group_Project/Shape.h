@@ -11,6 +11,16 @@
 
 #include"MyHeader.h"
 
+class ShapeException
+{
+    public:
+        ShapeException(): error{"invalid x and y"} {}
+        ShapeException(string e) : error{e} {}
+        string what() {return error;}
+    private:
+        string error;
+};
+
 class Shape
 {
     //overload equality operator and less than relational operator will compare shape object id's

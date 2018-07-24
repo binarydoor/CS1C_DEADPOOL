@@ -38,8 +38,19 @@ void Shape::SetBrush(const QBrush &brush)
 
 void Rectangle::SetXY(int x, int y)
 {
-    shapeDimensions[0] = x;
-    shapeDimensions[1] = y;
+    try
+    {
+        if(x < 0 || y < 0)
+        {
+            throw ShapeException("x y has to be positive");
+        }
+        shapeDimensions[0] = x;
+        shapeDimensions[1] = y;
+    }
+    catch(ShapeException obj)
+    {
+        cout << "In try catch block:" << obj.what() << endl;
+    }
 }
 
 QPen Shape::GetPen() const
