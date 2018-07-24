@@ -89,8 +89,8 @@ Line::Line(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::Globa
 					Qt::PenCapStyle cap = whichPenCapStyle(penCapStyle);
 					Qt::PenJoinStyle joinstyle = whichPenJoinStyle(penJoinStyle);
 					Qt::QBrush qBrush(color);
-					Qt::QPen qPen(qBrush, penWidth, style, cap, )
-					Qt::Line line(#something, shapeID, )
+					Qt::QPen qPen(qBrush, penWidth, style, cap, joinstyle);
+					Qt::Line line()
 					Qt::Line line(shapeID, *shapeDimensions, PenColor, penWidth, PenStyle, PenCapStyle, PenJoinStyle);
 					shapeVec.push_back(line);
 				}
