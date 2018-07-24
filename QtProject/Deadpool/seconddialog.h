@@ -13,14 +13,15 @@ class SecondDialog : public QDialog
 
 public:
     explicit SecondDialog(QWidget *parent = 0);
+    bool GetAdminAccess();
     ~SecondDialog();
 
 private:
     Ui::SecondDialog *ui;
+    bool admin;
 
 private slots:
     void on_pushButton_login_clicked();
-    void on_pushButtonAdmin_clicked();
 };
 
 #endif // SECONDDIALOG_H

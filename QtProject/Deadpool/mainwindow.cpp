@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    showAdminAccess = false;
     renderArea = new RenderArea; //what i commented
     ui->setupUi(this);
 
@@ -70,13 +71,24 @@ MainWindow::MainWindow(QWidget *parent) :
 //    setLayout(mainLayout);
 
 
-    renderArea->show();
     setWindowTitle("2D Graphics Modeler");
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::ToggleAdminAccess()
+{
+    if(showAdminAccess == false)
+    {
+        showAdminAccess = true;
+    }
+    else
+    {
+        showAdminAccess = false;
+    }
 }
 
 //void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
@@ -88,4 +100,9 @@ void MainWindow::on_actionLogin_triggered()
 {
     secDialog = new SecondDialog(this);
     secDialog->show();
+    showAdminAccess = secDialog->GetAdminAccess();
+    if(showAdminAccess == true)
+    {
+        ui->tabWidget->removeTab(1);
+    }
 }

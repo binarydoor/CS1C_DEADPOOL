@@ -25,7 +25,6 @@ QT_BEGIN_NAMESPACE
 class Ui_SecondDialog
 {
 public:
-    QPushButton *pushButtonAdmin;
     QGroupBox *groupBox;
     QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_6;
@@ -47,12 +46,9 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(SecondDialog->sizePolicy().hasHeightForWidth());
         SecondDialog->setSizePolicy(sizePolicy);
-        pushButtonAdmin = new QPushButton(SecondDialog);
-        pushButtonAdmin->setObjectName(QStringLiteral("pushButtonAdmin"));
-        pushButtonAdmin->setGeometry(QRect(20, 0, 113, 32));
         groupBox = new QGroupBox(SecondDialog);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(60, 90, 221, 141));
+        groupBox->setGeometry(QRect(70, 50, 221, 141));
         layoutWidget_2 = new QWidget(groupBox);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
         layoutWidget_2->setGeometry(QRect(10, 40, 199, 99));
@@ -103,7 +99,6 @@ public:
     void retranslateUi(QDialog *SecondDialog)
     {
         SecondDialog->setWindowTitle(QApplication::translate("SecondDialog", "Dialog", nullptr));
-        pushButtonAdmin->setText(QApplication::translate("SecondDialog", "Login Admin", nullptr));
         groupBox->setTitle(QApplication::translate("SecondDialog", "Log in", nullptr));
         label->setText(QApplication::translate("SecondDialog", "Username", nullptr));
         label_2->setText(QApplication::translate("SecondDialog", "Password", nullptr));
