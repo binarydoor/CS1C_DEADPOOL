@@ -1,5 +1,5 @@
 #include "renderarea.h"
-
+#include <QWidget>
 #include <QPainter>
 
 //! [0]
@@ -8,6 +8,7 @@ RenderArea::RenderArea(QWidget *parent)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
+    setFixedSize(sizeHint());
 }
 
 QSize RenderArea::minimumSizeHint() const
@@ -25,5 +26,5 @@ QSize RenderArea::sizeHint() const
 void RenderArea::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.drawText(10, 10, "Samuel Vilchez"); // just a test
+    painter.drawLine(10, 10, 100, 100); // just a test
 }

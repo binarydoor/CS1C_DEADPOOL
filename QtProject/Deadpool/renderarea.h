@@ -15,10 +15,7 @@ class RenderArea:public QWidget
         QSize minimumSizeHint() const override;
         QSize sizeHint() const override;
 
-
-        void paintEvent(QPaintEvent *event);
-
-    private:
+        void paintEvent(QPaintEvent *event) override;
 
 };
 

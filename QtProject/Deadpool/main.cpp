@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "renderarea.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

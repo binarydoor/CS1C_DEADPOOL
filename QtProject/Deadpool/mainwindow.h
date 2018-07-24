@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "renderarea.h"
 #include "seconddialog.h"
 
 namespace Ui {
@@ -17,11 +18,14 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_login_clicked();
+
+    void on_actionLogin_triggered();
 
 private:
     Ui::MainWindow *ui;
     SecondDialog *secDialog;
+    RenderArea *renderArea;
+    bool showAdminAccess;
 };
 
 #endif // MAINWINDOW_H
