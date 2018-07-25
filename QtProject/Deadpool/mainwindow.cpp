@@ -1,19 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <iostream>
-#include <string>
 #include "renderarea.h"
 #include <QPainter>
+#include <QFile>
+#include <QTextStream>
 #include<QMessageBox>
-using namespace std;
+#include<string>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     showAdminAccess = false;
-    renderArea = new RenderArea; //what i commented
+    //Pass in this to display on mainwindow
+    renderArea = new RenderArea(this);
+
     ui->setupUi(this);
+
+    renderArea->move(5, 25);
 
     ui->penWidthSpinBox->setMinimum(0);
     ui->penWidthSpinBox->setMaximum(20);
@@ -53,23 +57,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->brushColorComboBox->addItem("Yellow");
     ui->brushColorComboBox->addItem("Gray");
 
-
     ui->brushStyleComboBox->addItem("SolidPattern");
     ui->brushStyleComboBox->addItem("HorPattern");
     ui->brushStyleComboBox->addItem("VerPattern");
     ui->brushStyleComboBox->addItem("NoBrush");
 
-    QGridLayout *mainLayout = new QGridLayout;
-//! [9] //! [10]
-    mainLayout->setColumnStretch(0, 1);
-    mainLayout->setColumnStretch(3, 1);
-    mainLayout->addWidget(renderArea, 0, 0, 1, 4);
+    ui->textBrowser_2->hide();
 
-//    setCentralWidget(renderArea);
 
-//    mainLayout->setOriginCorner(Qt::Corner());
-//    setLayout(mainLayout);
+//    ui->tabWidget->hide(); //hides the tab widget
 
+//  ui->Canvas->setBackgroundRole(QPalette::Base);
+//  ui->Canvas->setAutoFillBackground(true);
+//  mainLayout->setOriginCorner(Qt::Corner());
 
     setWindowTitle("2D Graphics Modeler");
 }
@@ -91,6 +91,10 @@ void MainWindow::ToggleAdminAccess()
     }
 }
 
+void MainWindow::ShowTabWidget()
+{
+    ui->tabWidget->show();
+}
 //void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
 //{
 //    ui->renderCanvas->setShape(source);
@@ -100,9 +104,51 @@ void MainWindow::on_actionLogin_triggered()
 {
     secDialog = new SecondDialog(this);
     secDialog->show();
+
     showAdminAccess = secDialog->GetAdminAccess();
     if(showAdminAccess == true)
     {
-        ui->tabWidget->removeTab(1);
+        ui->tabWidget->show();
     }
+}
+
+void MainWindow::on_actionShape_Properties_triggered()
+{
+    QFile file("/Users/vilchez/Documents/Github/CS1C Group Project/CS1C_DEADPOOL/QtProject/Deadpool/shapes.txt");
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::information(0, "info", file.errorString());
+    }
+    QTextStream in(&file);
+    ui->textBrowser_2->show();
+    ui->textBrowser_2->setText(in.readAll());
+
+}
+
+void MainWindow::on_pushButtonMove_clicked()
+{
+    int x;
+    int y;
+    int id;
+
+    id = (ui->shapeIdLineEdit->text()).split(" ")[0].toInt();
+    x = (ui->lineEditX->text()).split(" ")[0].toInt();
+    y = (ui->lineEditY->text()).split(" ")[0].toInt();
+
+    if(x >= 0 && y >= 0 && id >= 0)
+    {
+        for(int index = 0; index < 10; index++)
+        {
+            //implement move use vector to check id
+            //once id is found call the move function
+            //if id is not found display warning box
+            //or simply do nothing
+        }
+    }
+    else
+    {
+        QMessageBox::warning(this, "Move Shape", "Invalid values provided");
+
+    }
+
 }

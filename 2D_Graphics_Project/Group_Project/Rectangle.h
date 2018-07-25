@@ -15,8 +15,7 @@ class Rectangle: public Shape
 {
     public: 
         Rectangle();
-        Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
-                  int l, int w);
+        Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
         ~Rectangle();
 
         void Draw() override;

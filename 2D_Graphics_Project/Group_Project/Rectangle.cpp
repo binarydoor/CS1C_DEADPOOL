@@ -14,12 +14,11 @@ Rectangle::Rectangle()
 }
 
 //alternate constructor shapeDimensions should only have the first coordinate
-Rectangle::Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions,
-                     int l, int w)
+Rectangle::Rectangle(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
                     :Shape(device, shapeId, pen, brush, shapeDimensions)
 {
-    height = l;
-    width = w;
+    height = shapeDimensions[2];
+    width = shapeDimensions[3];
 }
 
 Rectangle::~Rectangle()

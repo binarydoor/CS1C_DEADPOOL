@@ -9,6 +9,7 @@ class SecondDialog;
 
 class SecondDialog : public QDialog
 {
+    class MainWindow;
     Q_OBJECT
 
 public:

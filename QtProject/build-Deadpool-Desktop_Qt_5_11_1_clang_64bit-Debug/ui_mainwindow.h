@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -35,13 +36,15 @@ class Ui_MainWindow
 {
 public:
     QAction *actionLogin;
+    QAction *actionShape_Properties;
+    QAction *actionContact_us;
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *tab_2;
     QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *shapeIdLabel2;
-    QLineEdit *shapeIdLineEdit2;
+    QLineEdit *shapeIdLineEdit;
     QPushButton *pushButtonMove;
     QWidget *layoutWidget_3;
     QHBoxLayout *horizontalLayout_4;
@@ -86,13 +89,44 @@ public:
     QLabel *label_10;
     QComboBox *brushStyleComboBox;
     QPushButton *pushButtonDelete;
-    QPushButton *pushButtonModify;
+    QPushButton *pushButtonCreate;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QLabel *labelDimensions;
+    QLineEdit *lineEditDimensions;
     QWidget *tab_3;
     QVBoxLayout *verticalLayout_4;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_6;
     QTextBrowser *textBrowser;
+    QWidget *tab;
+    QGroupBox *groupBoxText;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QLabel *label_15;
+    QLineEdit *lineEditTextAlign;
+    QLineEdit *lineEditPointSize;
+    QLabel *label_16;
+    QLineEdit *lineEditFontFamily;
+    QLineEdit *lineEditFontStyle;
+    QLineEdit *lineEditWeight;
+    QLabel *label_17;
+    QLabel *label_18;
+    QLabel *label_19;
+    QPushButton *CreateTextButton;
+    QWidget *widget1;
+    QVBoxLayout *verticalLayout_7;
+    QLabel *label_2;
+    QLineEdit *lineEdit_2Dimensions;
+    QWidget *widget2;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_3;
+    QLineEdit *lineEditTextStr;
+    QLabel *label_14;
+    QLineEdit *lineEditTextColor;
+    QWidget *Canvas;
+    QTextBrowser *textBrowser_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -105,11 +139,15 @@ public:
         MainWindow->resize(1387, 701);
         actionLogin = new QAction(MainWindow);
         actionLogin->setObjectName(QStringLiteral("actionLogin"));
+        actionShape_Properties = new QAction(MainWindow);
+        actionShape_Properties->setObjectName(QStringLiteral("actionShape_Properties"));
+        actionContact_us = new QAction(MainWindow);
+        actionContact_us->setObjectName(QStringLiteral("actionContact_us"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(1010, 40, 241, 601));
+        tabWidget->setGeometry(QRect(1010, 30, 241, 601));
         tabWidget->setTabPosition(QTabWidget::North);
         tabWidget->setTabShape(QTabWidget::Rounded);
         tab_2 = new QWidget();
@@ -127,10 +165,10 @@ public:
 
         horizontalLayout_3->addWidget(shapeIdLabel2);
 
-        shapeIdLineEdit2 = new QLineEdit(layoutWidget_2);
-        shapeIdLineEdit2->setObjectName(QStringLiteral("shapeIdLineEdit2"));
+        shapeIdLineEdit = new QLineEdit(layoutWidget_2);
+        shapeIdLineEdit->setObjectName(QStringLiteral("shapeIdLineEdit"));
 
-        horizontalLayout_3->addWidget(shapeIdLineEdit2);
+        horizontalLayout_3->addWidget(shapeIdLineEdit);
 
         pushButtonMove = new QPushButton(tab_2);
         pushButtonMove->setObjectName(QStringLiteral("pushButtonMove"));
@@ -229,7 +267,7 @@ public:
 
         layoutWidget_6 = new QWidget(tab_2);
         layoutWidget_6->setObjectName(QStringLiteral("layoutWidget_6"));
-        layoutWidget_6->setGeometry(QRect(20, 180, 191, 100));
+        layoutWidget_6->setGeometry(QRect(20, 200, 191, 100));
         verticalLayout_3 = new QVBoxLayout(layoutWidget_6);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -354,10 +392,28 @@ public:
 
         verticalLayout_5->addWidget(pushButtonDelete);
 
-        pushButtonModify = new QPushButton(layoutWidget_8);
-        pushButtonModify->setObjectName(QStringLiteral("pushButtonModify"));
+        pushButtonCreate = new QPushButton(layoutWidget_8);
+        pushButtonCreate->setObjectName(QStringLiteral("pushButtonCreate"));
 
-        verticalLayout_5->addWidget(pushButtonModify);
+        verticalLayout_5->addWidget(pushButtonCreate);
+
+        widget = new QWidget(tab_2);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(20, 310, 191, 47));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        labelDimensions = new QLabel(widget);
+        labelDimensions->setObjectName(QStringLiteral("labelDimensions"));
+
+        verticalLayout->addWidget(labelDimensions);
+
+        lineEditDimensions = new QLineEdit(widget);
+        lineEditDimensions->setObjectName(QStringLiteral("lineEditDimensions"));
+
+        verticalLayout->addWidget(lineEditDimensions);
 
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
@@ -386,6 +442,105 @@ public:
         verticalLayout_4->addWidget(scrollArea);
 
         tabWidget->addTab(tab_3, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        groupBoxText = new QGroupBox(tab);
+        groupBoxText->setObjectName(QStringLiteral("groupBoxText"));
+        groupBoxText->setGeometry(QRect(10, 20, 211, 491));
+        label = new QLabel(groupBoxText);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 30, 60, 16));
+        lineEdit = new QLineEdit(groupBoxText);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(160, 30, 31, 21));
+        label_15 = new QLabel(groupBoxText);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(10, 230, 71, 21));
+        lineEditTextAlign = new QLineEdit(groupBoxText);
+        lineEditTextAlign->setObjectName(QStringLiteral("lineEditTextAlign"));
+        lineEditTextAlign->setGeometry(QRect(90, 230, 113, 21));
+        lineEditPointSize = new QLineEdit(groupBoxText);
+        lineEditPointSize->setObjectName(QStringLiteral("lineEditPointSize"));
+        lineEditPointSize->setGeometry(QRect(90, 270, 113, 21));
+        label_16 = new QLabel(groupBoxText);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(9, 270, 71, 20));
+        lineEditFontFamily = new QLineEdit(groupBoxText);
+        lineEditFontFamily->setObjectName(QStringLiteral("lineEditFontFamily"));
+        lineEditFontFamily->setGeometry(QRect(90, 310, 113, 21));
+        lineEditFontStyle = new QLineEdit(groupBoxText);
+        lineEditFontStyle->setObjectName(QStringLiteral("lineEditFontStyle"));
+        lineEditFontStyle->setGeometry(QRect(90, 350, 113, 21));
+        lineEditWeight = new QLineEdit(groupBoxText);
+        lineEditWeight->setObjectName(QStringLiteral("lineEditWeight"));
+        lineEditWeight->setGeometry(QRect(90, 400, 113, 21));
+        label_17 = new QLabel(groupBoxText);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(9, 310, 71, 20));
+        label_18 = new QLabel(groupBoxText);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(9, 350, 71, 20));
+        label_19 = new QLabel(groupBoxText);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(9, 400, 71, 20));
+        CreateTextButton = new QPushButton(groupBoxText);
+        CreateTextButton->setObjectName(QStringLiteral("CreateTextButton"));
+        CreateTextButton->setGeometry(QRect(50, 440, 113, 32));
+        widget1 = new QWidget(groupBoxText);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(6, 60, 191, 47));
+        verticalLayout_7 = new QVBoxLayout(widget1);
+        verticalLayout_7->setSpacing(6);
+        verticalLayout_7->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget1);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        verticalLayout_7->addWidget(label_2);
+
+        lineEdit_2Dimensions = new QLineEdit(widget1);
+        lineEdit_2Dimensions->setObjectName(QStringLiteral("lineEdit_2Dimensions"));
+
+        verticalLayout_7->addWidget(lineEdit_2Dimensions);
+
+        widget2 = new QWidget(groupBoxText);
+        widget2->setObjectName(QStringLiteral("widget2"));
+        widget2->setGeometry(QRect(10, 110, 181, 101));
+        verticalLayout_8 = new QVBoxLayout(widget2);
+        verticalLayout_8->setSpacing(6);
+        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(widget2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        verticalLayout_8->addWidget(label_3);
+
+        lineEditTextStr = new QLineEdit(widget2);
+        lineEditTextStr->setObjectName(QStringLiteral("lineEditTextStr"));
+
+        verticalLayout_8->addWidget(lineEditTextStr);
+
+        label_14 = new QLabel(widget2);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        verticalLayout_8->addWidget(label_14);
+
+        lineEditTextColor = new QLineEdit(widget2);
+        lineEditTextColor->setObjectName(QStringLiteral("lineEditTextColor"));
+
+        verticalLayout_8->addWidget(lineEditTextColor);
+
+        tabWidget->addTab(tab, QString());
+        Canvas = new QWidget(centralWidget);
+        Canvas->setObjectName(QStringLiteral("Canvas"));
+        Canvas->setGeometry(QRect(0, 30, 1000, 500));
+        Canvas->setMinimumSize(QSize(1000, 500));
+        Canvas->setMaximumSize(QSize(1000, 500));
+        textBrowser_2 = new QTextBrowser(centralWidget);
+        textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
+        textBrowser_2->setGeometry(QRect(30, 520, 951, 111));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -402,10 +557,12 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionLogin);
+        menuFile->addAction(actionShape_Properties);
+        menuFile->addAction(actionContact_us);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -415,6 +572,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionLogin->setText(QApplication::translate("MainWindow", "Login", nullptr));
+        actionShape_Properties->setText(QApplication::translate("MainWindow", "Shape Properties", nullptr));
+        actionContact_us->setText(QApplication::translate("MainWindow", "Contact us", nullptr));
         shapeIdLabel2->setText(QApplication::translate("MainWindow", "Shape ID", nullptr));
         pushButtonMove->setText(QApplication::translate("MainWindow", "MOVE!", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "   X", nullptr));
@@ -438,8 +597,9 @@ public:
         label_12->setText(QApplication::translate("MainWindow", "Brush Color", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "Brush Style", nullptr));
         pushButtonDelete->setText(QApplication::translate("MainWindow", "DELETE!", nullptr));
-        pushButtonModify->setText(QApplication::translate("MainWindow", "CREATE!", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Move and Modify", nullptr));
+        pushButtonCreate->setText(QApplication::translate("MainWindow", "CREATE!", nullptr));
+        labelDimensions->setText(QApplication::translate("MainWindow", "New Dimensions", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Move,Create", nullptr));
         textBrowser->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -457,6 +617,19 @@ public:
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-i"
                         "ndent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Contact us", nullptr));
+        groupBoxText->setTitle(QApplication::translate("MainWindow", "Create Text", nullptr));
+        label->setText(QApplication::translate("MainWindow", "ShapeId", nullptr));
+        lineEdit->setText(QApplication::translate("MainWindow", "id", nullptr));
+        label_15->setText(QApplication::translate("MainWindow", "Text Align", nullptr));
+        label_16->setText(QApplication::translate("MainWindow", "Point size", nullptr));
+        label_17->setText(QApplication::translate("MainWindow", "FontFamily", nullptr));
+        label_18->setText(QApplication::translate("MainWindow", "FontStyle", nullptr));
+        label_19->setText(QApplication::translate("MainWindow", "Weight", nullptr));
+        CreateTextButton->setText(QApplication::translate("MainWindow", "Create Text", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Shape Dimensions", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Text String", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "Text Color", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Create Text", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 

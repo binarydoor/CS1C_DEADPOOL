@@ -16,11 +16,16 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void ToggleAdminAccess();
+    void ShowTabWidget();
     ~MainWindow();
 
 private slots:
 
     void on_actionLogin_triggered();
+
+    void on_actionShape_Properties_triggered();
+
+    void on_pushButtonMove_clicked();
 
 private:
     Ui::MainWindow *ui;

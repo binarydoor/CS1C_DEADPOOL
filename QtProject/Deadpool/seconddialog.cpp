@@ -39,8 +39,6 @@ void SecondDialog::on_pushButton_login_clicked()
         QMessageBox::information(this, "Login", "Username and password is correct");
         hide();
         admin = true;
-
-
     }
     else
     {
