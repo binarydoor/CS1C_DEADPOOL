@@ -35,7 +35,7 @@ class vector
 public:
     vector(): size_v{0}, elem{nullptr}, space{0} {} // default constructor
 
-    explicit vector(int s): size_v{s}, elem{new T[s]}, space{s} // alternate constructor
+    explicit vector(int s): size_v{0}, elem{new T[s]}, space{s} // alternate constructor
     {
         for (int i = 0; i < size_v; ++i)
             elem[i] = T(); // elements are initialized
@@ -120,7 +120,7 @@ public:
         if (space == 0)
             reserve(8);        // start with space for 8 elements
         else if (size_v == space)
-            reserve(2 * space) // get more space
+            reserve(2 * space); // get more space
         elem[size_v] = obj;    // add d at end
         ++size_v;              // increase the size (size_v is the number of elements)
     }

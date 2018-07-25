@@ -93,14 +93,8 @@ Line::Line(QPaintDevice* device, int shapeId, QPen pen, QBrush brush, vector<int
 					linePen.setCapStyle(whichPenCapStyle(penCapStyle));
 					linePen.setJoinStyle(whichPenJoinStyle(penJoinStyle));
 
-					Qt::Line line(device, shapeID, linePen, lineBrush, shapeDimensions);
-					Qt::PenStyle style = whichPenStyle(penStyle);
-					Qt::PenCapStyle cap = whichPenCapStyle(penCapStyle);
-					Qt::PenJoinStyle joinstyle = whichPenJoinStyle(penJoinStyle);
-					Qt::QBrush qBrush(color);
-					Qt::QPen qPen(qBrush, penWidth, style, cap, joinstyle);
-					Qt::Line line(device, shapeID, )
-					Qt::Line line(shapeID, *shapeDimensions, PenColor, penWidth, PenStyle, PenCapStyle, PenJoinStyle);
+					Line line(device, shapeID, linePen, lineBrush, *shapeDimensions);
+
 					shapeVec.push_back(line);
 
 					shapeID = -999;
@@ -124,7 +118,70 @@ Line::Line(QPaintDevice* device, int shapeId, QPen pen, QBrush brush, vector<int
 				
 				else if (shapeType == "Polyline")
 				{
+					Qt::QPen polylinePen;
+					Qt::QBrush polylineBrush;
+					Qt::QColor polylinePenColor(whichColor(penColor));
+					polylinePen.setColor(polylinePenColor);
+					polylinePen.setWidth(penWidth);
+					polylinePen.setStyle(whichPenStyle(penStyle));
+					polylinePen.setCapStyle(whichPenCapStyle(penCapStyle));
+					polylinePen.setJoinStyle(whichPenJoinStyle(penJoinStyle));
 
+					Polyline polyline(device, shapeID, polylinePen, polylineBrush, *shapeDimensions);
+
+					shapeVec.push_back(polyline);
+
+					shapeID = -999;
+					shapeType = "";
+					delete shapeDimensions;
+					penColor = "";
+					penWidth = -999;
+					penStyle = "";
+					penCapStyle = "";
+					penJoinStyle = "";
+					brushColor = "";
+					brushStyle = "";
+					textString = "";
+					textColor = "";
+					textAlignment = "";
+					textPointSize = -999;
+					textFontFamily = "";
+					textFontStyle = "";
+					textFontWeight = "";
+				}
+
+				else if (shapeType == "Polyline")
+				{
+					Qt::QPen polylinePen;
+					Qt::QBrush polylineBrush;
+					Qt::QColor polylinePenColor(whichColor(penColor));
+					polylinePen.setColor(polylinePenColor);
+					polylinePen.setWidth(penWidth);
+					polylinePen.setStyle(whichPenStyle(penStyle));
+					polylinePen.setCapStyle(whichPenCapStyle(penCapStyle));
+					polylinePen.setJoinStyle(whichPenJoinStyle(penJoinStyle));
+
+					Polyline polyline(device, shapeID, polylinePen, polylineBrush, *shapeDimensions);
+
+					shapeVec.push_back(polyline);
+
+					shapeID = -999;
+					shapeType = "";
+					delete shapeDimensions;
+					penColor = "";
+					penWidth = -999;
+					penStyle = "";
+					penCapStyle = "";
+					penJoinStyle = "";
+					brushColor = "";
+					brushStyle = "";
+					textString = "";
+					textColor = "";
+					textAlignment = "";
+					textPointSize = -999;
+					textFontFamily = "";
+					textFontStyle = "";
+					textFontWeight = "";
 				}
 				//
 				shapeID = -999;
