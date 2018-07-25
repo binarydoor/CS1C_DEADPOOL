@@ -78,29 +78,55 @@ void importFile(Qt::QPaintDevice *device, vector<Shape> &shapeVec, const string 
 				else if (dataType = 17)
 					textFontWeight = str.substr(str.find(":") + 2, str.size() - str.find(":") - 1);
 			}
-Line::Line(int shapeId, string shapeType, vector<int> shapeDimensions, Qt::GlobalColor penColor, 
-           int penWidth, Qt::PenStyle, penStyle, Qt::PenCapStyle penCapStyle, Qt::PenJoinStyle penJoinStyle)
+Line::Line(QPaintDevice* device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions)
+           :Shape(device, shapeId, pen, brush, shapeDimensions)
 			else if (getting_data && str == "")
 			{
 				if (shapeType == "Line")
 				{
-					Qt::GlobalColor color = whichColor(penColor);
+					Qt::QPen linePen;
+					Qt::QBrush lineBrush;
+					Qt::QColor linePenColor(whichColor(penColor));
+					linePen.setColor(linePenColor);
+					linePen.setWidth(penWidth);
+					linePen.setStyle(whichPenStyle(penStyle));
+					linePen.setCapStyle(whichPenCapStyle(penCapStyle));
+					linePen.setJoinStyle(whichPenJoinStyle(penJoinStyle));
+
+					Qt::Line line(device, shapeID, linePen, lineBrush, shapeDimensions);
 					Qt::PenStyle style = whichPenStyle(penStyle);
 					Qt::PenCapStyle cap = whichPenCapStyle(penCapStyle);
 					Qt::PenJoinStyle joinstyle = whichPenJoinStyle(penJoinStyle);
 					Qt::QBrush qBrush(color);
 					Qt::QPen qPen(qBrush, penWidth, style, cap, joinstyle);
-					Qt::Line line()
+					Qt::Line line(device, shapeID, )
 					Qt::Line line(shapeID, *shapeDimensions, PenColor, penWidth, PenStyle, PenCapStyle, PenJoinStyle);
 					shapeVec.push_back(line);
+
+					shapeID = -999;
+					shapeType = "";
+					delete shapeDimensions;
+					penColor = "";
+					penWidth = -999;
+					penStyle = "";
+					penCapStyle = "";
+					penJoinStyle = "";
+					brushColor = "";
+					brushStyle = "";
+					textString = "";
+					textColor = "";
+					textAlignment = "";
+					textPointSize = -999;
+					textFontFamily = "";
+					textFontStyle = "";
+					textFontWeight = "";
 				}
-				Line(QPaintDevice *device, int shapeId, QPen pen, QBrush brush, vector<int> shapeDimensions);
-				QPen(const QBrush &brush, qreal width, Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap, Qt::PenJoinStyle join = Qt::BevelJoin)
-				else if (shapeType == "Something")
+				
+				else if (shapeType == "Polyline")
 				{
 
 				}
-
+				//
 				shapeID = -999;
 				shapeType = "";
 				delete shapeDimensions;
