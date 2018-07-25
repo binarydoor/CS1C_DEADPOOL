@@ -10,7 +10,7 @@
 
 Rectangle::Rectangle()
 {
-    shapeId = 0;
+
 }
 
 //alternate constructor shapeDimensions should only have the first coordinate
@@ -25,10 +25,10 @@ Rectangle::~Rectangle()
 {
 }
 
-void Rectangle::Draw() override
+void Rectangle::Draw() //override
 {
-    GetQPainter().setpen(GetPen());
-    GetQPainter().setbrush(GetBrush());
+    GetQPainter().setPen(GetPen());
+    GetQPainter().setBrush(GetBrush());
 
     GetQPainter().save();
 
@@ -37,18 +37,18 @@ void Rectangle::Draw() override
     GetQPainter().restore();
 }
 
-void Rectangle::Move(int x, int y) override
+void Rectangle::Move(int x, int y) //override
 {
     SetXY(x, y);
     Draw();
 }
 
-double Rectangle::Perimeter() override
+double Rectangle::Perimeter() //override
 {
     return (2 * length) + (2 * width);
 }
 
-double Rectangle::Area() override
+double Rectangle::Area() //override
 {
     return (length * width);
 }

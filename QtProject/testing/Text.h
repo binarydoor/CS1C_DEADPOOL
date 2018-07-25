@@ -21,7 +21,7 @@ class Text: public Shape
              vector<int> shapeDimensions);
         ~Text();
 
-        void Draw() override;
+        void Draw();
         void Move(int x, int y) override;
         double Perimeter() override;
         double Area() override;
