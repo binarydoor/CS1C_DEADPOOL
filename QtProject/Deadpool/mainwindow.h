@@ -31,6 +31,7 @@ private:
     Ui::MainWindow *ui;
     SecondDialog *secDialog;
     RenderArea *renderArea;
+
     bool showAdminAccess;
 };
 

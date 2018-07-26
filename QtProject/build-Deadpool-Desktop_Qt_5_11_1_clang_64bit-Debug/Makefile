@@ -13,8 +13,8 @@ MAKEFILE      = Makefile
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.11 -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.11 -Wall -W -fPIC $(DEFINES)
+CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.13 -Wall -W -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.13 -Wall -W -fPIC $(DEFINES)
 INCPATH       = -I../Deadpool -I. -I/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers -I/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers -I/Applications/qt/5.11.1/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/qt/5.11.1/clang_64/mkspecs/macx-clang -F/Applications/qt/5.11.1/clang_64/lib
 QMAKE         = /Applications/qt/5.11.1/clang_64/bin/qmake
 DEL_FILE      = rm -f
@@ -37,7 +37,7 @@ COMPRESS      = gzip -9f
 DISTNAME      = Deadpool1.0.0
 DISTDIR = /Users/vilchez/Documents/Github/CS1C\ Group\ Project/CS1C_DEADPOOL/QtProject/build-Deadpool-Desktop_Qt_5_11_1_clang_64bit-Debug/.tmp/Deadpool1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.11 -Wl,-rpath,@executable_path/Frameworks -Wl,-rpath,/Applications/qt/5.11.1/clang_64/lib
+LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.13 -Wl,-rpath,@executable_path/Frameworks -Wl,-rpath,/Applications/qt/5.11.1/clang_64/lib
 LIBS          = $(SUBLIBS) -F/Applications/qt/5.11.1/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
@@ -61,7 +61,8 @@ OBJECTS       = main.o \
 		renderarea.o \
 		moc_mainwindow.o \
 		moc_seconddialog.o
-DIST          = /Applications/qt/5.11.1/clang_64/mkspecs/features/spec_pre.prf \
+DIST          = /Users/vilchez/Documents/TempGitProblem/QtProject/Deadpool/shapes.txt \
+		/Applications/qt/5.11.1/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/qt/5.11.1/clang_64/mkspecs/qdevice.pri \
 		/Applications/qt/5.11.1/clang_64/mkspecs/features/device_config.prf \
 		/Applications/qt/5.11.1/clang_64/mkspecs/common/unix.conf \
@@ -673,7 +674,7 @@ Deadpool.app/Contents/Resources/empty.lproj:
 Deadpool.app/Contents/Info.plist: 
 	@test -d Deadpool.app/Contents || mkdir -p Deadpool.app/Contents
 	@$(DEL_FILE) Deadpool.app/Contents/Info.plist
-	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,com.yourcompany.Deadpool,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},com.yourcompany.Deadpool,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.11,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,Deadpool,g" -e "s,@LIBRARY@,Deadpool,g" -e "s,\$${EXECUTABLE_NAME},Deadpool,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" /Applications/qt/5.11.1/clang_64/mkspecs/macx-clang/Info.plist.app >Deadpool.app/Contents/Info.plist
+	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,com.yourcompany.Deadpool,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},com.yourcompany.Deadpool,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.13,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,Deadpool,g" -e "s,@LIBRARY@,Deadpool,g" -e "s,\$${EXECUTABLE_NAME},Deadpool,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" /Applications/qt/5.11.1/clang_64/mkspecs/macx-clang/Info.plist.app >Deadpool.app/Contents/Info.plist
 
 all: Makefile \
 		Deadpool.app/Contents/PkgInfo \
@@ -719,13 +720,22 @@ compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: /Applications/qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h /Applications/qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.13 -Wall -W -dM -E -o moc_predefs.h /Applications/qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_seconddialog.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_seconddialog.cpp
 moc_mainwindow.cpp: /Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Deadpool/renderarea.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPainter \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPen \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QBrush \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qbrush.h \
 		../Deadpool/seconddialog.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -771,6 +781,15 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: ../Deadpool/main.cpp ../Deadpool/mainwindow.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Deadpool/renderarea.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPainter \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPen \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QBrush \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qbrush.h \
 		../Deadpool/seconddialog.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -781,10 +800,23 @@ main.o: ../Deadpool/main.cpp ../Deadpool/mainwindow.h \
 mainwindow.o: ../Deadpool/mainwindow.cpp ../Deadpool/mainwindow.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Deadpool/renderarea.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPainter \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPen \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QBrush \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qbrush.h \
 		../Deadpool/seconddialog.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_mainwindow.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		/Applications/qt/5.11.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		/Applications/qt/5.11.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Deadpool/mainwindow.cpp
@@ -793,11 +825,31 @@ seconddialog.o: ../Deadpool/seconddialog.cpp ../Deadpool/seconddialog.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_seconddialog.h \
+		../Deadpool/mainwindow.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../Deadpool/renderarea.h \
 		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPainter \
-		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPen \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QBrush \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qbrush.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o seconddialog.o ../Deadpool/seconddialog.cpp
 
-renderarea.o: ../Deadpool/renderarea.cpp 
+renderarea.o: ../Deadpool/renderarea.cpp ../Deadpool/renderarea.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPainter \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpainter.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Applications/qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QPen \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qpen.h \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/QBrush \
+		/Applications/qt/5.11.1/clang_64/lib/QtGui.framework/Headers/qbrush.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o renderarea.o ../Deadpool/renderarea.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

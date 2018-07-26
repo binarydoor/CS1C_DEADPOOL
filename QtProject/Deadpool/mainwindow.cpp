@@ -4,8 +4,8 @@
 #include <QPainter>
 #include <QFile>
 #include <QTextStream>
-#include<QMessageBox>
-#include<string>
+#include <QMessageBox>
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -114,6 +114,7 @@ void MainWindow::on_actionLogin_triggered()
 
 void MainWindow::on_actionShape_Properties_triggered()
 {
+    //Users/vilchez/Documents/Github/CS1C Group Project/CS1C_DEADPOOL/QtProject/Deadpool/shapes.txt
     QFile file("/Users/vilchez/Documents/Github/CS1C Group Project/CS1C_DEADPOOL/QtProject/Deadpool/shapes.txt");
     if(!file.open(QIODevice::ReadOnly))
     {
@@ -150,5 +151,4 @@ void MainWindow::on_pushButtonMove_clicked()
         QMessageBox::warning(this, "Move Shape", "Invalid values provided");
 
     }
-
 }

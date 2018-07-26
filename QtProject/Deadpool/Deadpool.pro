@@ -37,3 +37,6 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     seconddialog.ui
+
+DISTFILES += \
+    ../../../../../TempGitProblem/QtProject/Deadpool/shapes.txt
